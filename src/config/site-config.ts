@@ -1,3 +1,14 @@
+export type InstagramPost = {
+  url: string;
+  type: "lesson" | "review";
+  title: string;
+  description?: string;
+};
+
+// Add real published Reels or posts here. Keep the array empty until real
+// links are known — do not put placeholder URLs.
+const INSTAGRAM_POSTS: readonly InstagramPost[] = [];
+
 export const siteConfig = {
   name: "Теңдик",
   tagline: "Мечиттеги Куран курсу",
@@ -23,6 +34,14 @@ export const siteConfig = {
     address:
       "Красный строитель турак жай массиви, 2а/3, Теңдик ж/м, Биринчи Май району, Бишкек",
     mapUrl: "https://go.2gis.com/shyy0",
+  },
+
+  social: {
+    instagram: {
+      handle: "@muslimkids.media",
+      profileUrl: "https://www.instagram.com/muslimkids.media/",
+      posts: INSTAGRAM_POSTS,
+    },
   },
 
   courseDays: ["Ишемби", "Жекшемби"] as const,

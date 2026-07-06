@@ -10,10 +10,12 @@ import { LocationSection } from "@/components/sections/location-section";
 import { CurriculumSection } from "@/components/sections/curriculum-section";
 import { LearningPathSection } from "@/components/sections/learning-path-section";
 import { MotivationSection } from "@/components/sections/motivation-section";
+import { InstagramSection } from "@/components/sections/instagram-section";
 import { ExpensesSection } from "@/components/sections/expenses-section";
 import { RefundSection } from "@/components/sections/refund-section";
 import { ParentsSection } from "@/components/sections/parents-section";
 import { FaqSection } from "@/components/sections/faq-section";
+import { WatchFirstCtaSection } from "@/components/sections/watch-first-cta-section";
 import { FinalCtaSection } from "@/components/sections/final-cta-section";
 import { RegistrationSheet } from "@/components/registration/registration-sheet";
 
@@ -30,10 +32,12 @@ export default function HomePage() {
         <CurriculumSection />
         <LearningPathSection />
         <MotivationSection />
+        <InstagramSection />
         <ExpensesSection />
         <RefundSection />
         <ParentsSection />
         <FaqSection />
+        <WatchFirstCtaSection />
         <FinalCtaSection />
       </main>
       <SiteFooter />

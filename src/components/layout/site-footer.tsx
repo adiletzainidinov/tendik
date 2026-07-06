@@ -5,6 +5,7 @@ import {
   Navigation,
   Phone,
 } from "lucide-react";
+import { InstagramIcon } from "@/components/ui/instagram-icon";
 import { siteConfig } from "@/config/site-config";
 import { QUICK_CONTACT_URL } from "@/lib/whatsapp";
 
@@ -12,6 +13,8 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
   const { phoneDisplay, phoneTel } = siteConfig.contact;
   const { mosqueName, addressShort, address, mapUrl } = siteConfig.location;
+  const { handle: igHandle, profileUrl: igUrl } = siteConfig.social.instagram;
+  const igLabel = `${siteConfig.name} курсунун Instagram баракчасын ачуу`;
 
   return (
     <footer className="mt-8 border-t border-border bg-surface-soft px-5 pt-8 pb-10">
@@ -107,6 +110,30 @@ export function SiteFooter() {
             <Navigation aria-hidden className="h-4 w-4" />
             2GIS картадан көрүү
             <ExternalLink aria-hidden className="h-3.5 w-3.5 opacity-70" />
+          </a>
+
+          <a
+            href={igUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={igLabel}
+            className={
+              "mt-2 inline-flex min-h-11 w-full items-center gap-2.5 rounded-xl border border-border " +
+              "bg-surface px-3.5 text-[13.5px] font-medium text-text transition-colors hover:bg-surface-soft"
+            }
+          >
+            <span
+              aria-hidden
+              className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-md text-white"
+              style={{
+                background:
+                  "linear-gradient(135deg, #833ab4 0%, #fd1d1d 55%, #fcb045 100%)",
+              }}
+            >
+              <InstagramIcon className="h-3.5 w-3.5" />
+            </span>
+            <span className="flex-1">{igHandle}</span>
+            <ExternalLink aria-hidden className="h-3.5 w-3.5 opacity-60" />
           </a>
         </div>
 

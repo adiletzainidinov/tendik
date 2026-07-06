@@ -6,7 +6,9 @@ import {
   HelpCircle,
   MessageCircle,
 } from "lucide-react";
+import { InstagramIcon } from "@/components/ui/instagram-icon";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { siteConfig } from "@/config/site-config";
 import { QUICK_CONTACT_URL } from "@/lib/whatsapp";
 
 const ITEMS = [
@@ -18,6 +20,8 @@ const ITEMS = [
 ] as const;
 
 export function ParentsSection() {
+  const igUrl = siteConfig.social.instagram.profileUrl;
+  const igLabel = `${siteConfig.name} курсунун Instagram баракчасын ачуу`;
   return (
     <section
       aria-labelledby="parents-title"
@@ -52,6 +56,10 @@ export function ParentsSection() {
           Сабактын программасы, баланын деңгээли, каттоо жана төлөм тууралуу
           WhatsApp аркылуу так маалымат ала аласыз.
         </p>
+        <p className="mt-2 text-[13px] leading-relaxed text-primary-dark/85">
+          Сабактар кандай өтөрүн алдын ала көргүңүз келсе, Instagram
+          баракчабыздагы чыныгы видеолорду жана пикирлерди көрүңүз.
+        </p>
         <a
           href={QUICK_CONTACT_URL}
           target="_blank"
@@ -65,6 +73,21 @@ export function ParentsSection() {
           <MessageCircle aria-hidden className="h-4 w-4" />
           WhatsApp аркылуу суроо берүү
           <ExternalLink aria-hidden className="h-4 w-4 opacity-80" />
+        </a>
+        <a
+          href={igUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={igLabel}
+          className={
+            "mt-2 inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl " +
+            "border border-primary/25 bg-transparent px-3.5 text-[13.5px] font-medium text-primary-dark " +
+            "transition-colors hover:bg-primary-soft"
+          }
+        >
+          <InstagramIcon aria-hidden className="h-4 w-4" />
+          Instagram&apos;дан көрүү
+          <ExternalLink aria-hidden className="h-3.5 w-3.5 opacity-70" />
         </a>
       </div>
     </section>
