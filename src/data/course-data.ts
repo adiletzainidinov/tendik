@@ -1,0 +1,347 @@
+import {
+  BookOpenText,
+  Feather,
+  GraduationCap,
+  HandHeart,
+  HeartHandshake,
+  IceCream2,
+  Award,
+  BookMarked,
+  Brush,
+  CalendarDays,
+  Droplets,
+  Gift,
+  Medal,
+  MoonStar,
+  Package,
+  Repeat,
+  ShieldCheck,
+  Star,
+  Sun,
+  Users,
+  UtensilsCrossed,
+} from "lucide-react";
+
+import type {
+  BenefitItem,
+  CurriculumItem,
+  ExpenseItem,
+  FaqItem,
+  LearningStep,
+  MotivationItem,
+  ScheduleItem,
+} from "@/types/course";
+
+export const CURRICULUM: readonly CurriculumItem[] = [
+  {
+    id: "muallim-saani",
+    title: "Муаллим Саани",
+    description: "Куран окууга даярдоо баскычы.",
+    points: [
+      "Араб тамгаларын үйрөнүү",
+      "Туура айтылышы",
+      "Куран окууга акырындык менен даярдануу",
+    ],
+    icon: Feather,
+  },
+  {
+    id: "quran-reading",
+    title: "Куран окуу",
+    description: "Ар бир окуучунун деңгээлине көңүл бөлүп окуйбуз.",
+    points: [
+      "Туура окууга үйрөтөбүз",
+      "Акырындык менен өнүктүрүү",
+      "Жеке мамиле",
+    ],
+    icon: BookOpenText,
+  },
+  {
+    id: "tajweed",
+    title: "Тажвид",
+    description: "Куранды туура окуунун эрежелери.",
+    points: [
+      "Негизги эрежелер",
+      "Тамгалардын так айтылышы",
+      "Окуу эрежелерин сактоо",
+    ],
+    icon: BookMarked,
+  },
+  {
+    id: "memorization",
+    title: "Куранды жаттоо",
+    description: "Сүрө жана аяттарды акырындык менен жаттайбыз.",
+    points: [
+      "Сүрөлөр менен аяттарды жаттоо",
+      "Кайталоо жана бекемдөө",
+      "Үйрөнүлгөндү текшерүү",
+    ],
+    icon: Repeat,
+  },
+  {
+    id: "duas",
+    title: "Дуалар",
+    description: "Күндөлүк дуаларды үйрөнөбүз.",
+    points: [
+      "Негизги күндөлүк дуалар",
+      "Качан окулаарын түшүнүү",
+      "Акырындык менен жаттоо",
+    ],
+    icon: HandHeart,
+  },
+  {
+    id: "wudu-namaz",
+    title: "Даарат жана намаз",
+    description: "Дааратты жана намазды туура үйрөнүү.",
+    points: [
+      "Даарат алуу тартиби",
+      "Намаздын тартиби",
+      "Көп кетирилүүчү каталарды оңдойбуз",
+    ],
+    icon: Droplets,
+  },
+  {
+    id: "tarbia",
+    title: "Исламдык тарбия",
+    description: "Балдарды жакшы адеп-ахлакка үйрөтөбүз.",
+    points: [
+      "Сый-урмат",
+      "Тазалык",
+      "Тартип",
+      "Жоопкерчилик",
+      "Айланадагыларга жакшы мамиле",
+    ],
+    icon: HeartHandshake,
+  },
+];
+
+export const BENEFITS: readonly BenefitItem[] = [
+  {
+    id: "focus-quran",
+    title: "Негизги көңүл Куран үйрөнүүгө бурулат",
+    icon: BookOpenText,
+  },
+  {
+    id: "experienced",
+    title: "Тажрыйбалуу устаздар",
+    icon: GraduationCap,
+  },
+  {
+    id: "weekend",
+    title: "Дем алыш күндөрү ыңгайлуу убакыт",
+    icon: CalendarDays,
+  },
+  {
+    id: "full-program",
+    title: "Куран, тажвид, дуа, даарат жана намаз",
+    icon: BookMarked,
+  },
+  {
+    id: "discipline",
+    title: "Тартип жана жоопкерчилик",
+    icon: ShieldCheck,
+  },
+  {
+    id: "rewards",
+    title: "Сыйлыктар жана мотивация",
+    icon: Award,
+  },
+];
+
+export const SCHEDULE: readonly ScheduleItem[] = [
+  {
+    id: "days",
+    title: "Ишемби жана жекшемби",
+    description: "Дем алыш күндөрү мечитте өтөт.",
+    icon: CalendarDays,
+  },
+  {
+    id: "main",
+    title: "Бешимден Асрга чейин",
+    description: "Негизги Куран сабагы.",
+    icon: Sun,
+  },
+  {
+    id: "extra",
+    title: "Асрдан кийин 1 саат",
+    description: "Дуа, даарат, намаз жана тарбиялык сабак.",
+    icon: MoonStar,
+  },
+];
+
+export const LEARNING_PATH: readonly LearningStep[] = [
+  {
+    id: "letters",
+    title: "Тамгаларды үйрөнүү",
+    description: "Араб тамгаларын тааныйбыз.",
+  },
+  {
+    id: "muallim",
+    title: "Муаллим Саани",
+    description: "Куран окууга негиз бекитебиз.",
+  },
+  {
+    id: "correct-reading",
+    title: "Туура окуу",
+    description: "Тамгаларды туура айтабыз.",
+  },
+  {
+    id: "tajweed-rules",
+    title: "Тажвид эрежелери",
+    description: "Куран окуу эрежелерин үйрөнөбүз.",
+  },
+  {
+    id: "quran-reading",
+    title: "Куран окуу",
+    description: "Куранды бетинен түз окууга акырындык менен үйрөтөбүз.",
+  },
+  {
+    id: "memorization",
+    title: "Сүрө жана аяттарды жаттоо",
+    description: "Сүрө жана аяттарды акырындык менен жаттатабыз.",
+  },
+];
+
+export const MOTIVATION: readonly MotivationItem[] = [
+  {
+    id: "daily-icecream",
+    title: "Ар бир окуу күнү",
+    description: "Ар бир окуу күнү балдарга балмуздак берилет.",
+    icon: IceCream2,
+  },
+  {
+    id: "weekly-top",
+    title: "Аптанын мыкты үч окуучусу",
+    description: "Аптанын үч мыкты окуучусуна кошумча балмуздак берилет.",
+    icon: Star,
+  },
+  {
+    id: "monthly-top",
+    title: "Айдын мыкты окуучусу",
+    description: "Айдын мыкты окуучусуна грамота жана белек тапшырылат.",
+    icon: Medal,
+  },
+  {
+    id: "quran-start",
+    title: "Куран окууга өтүү",
+    description: "Куран окууга өткөн окуучуга атайын грамота жана белек берилет.",
+    icon: Gift,
+  },
+  {
+    id: "cleanliness",
+    title: "Тазалыкка тарбия",
+    description:
+      "Балдар мечиттин тазалыгына салым кошуп, жоопкерчиликке үйрөнүшөт.",
+    icon: Brush,
+  },
+  {
+    id: "team",
+    title: "Биргелешип иштөө",
+    description: "Балдар чоңдордун көзөмөлү астында биргелешип аракет кылышат.",
+    icon: Users,
+  },
+];
+
+export const EXPENSES: readonly ExpenseItem[] = [
+  {
+    id: "teachers",
+    title: "Устаздардын эмгек акысы",
+    icon: GraduationCap,
+  },
+  {
+    id: "teacher-food",
+    title: "Сабак күндөрү устаздарга тамак-аш",
+    icon: UtensilsCrossed,
+  },
+  {
+    id: "materials",
+    title: "Окуу китептери жана материалдары",
+    icon: BookMarked,
+  },
+  {
+    id: "icecream",
+    title: "Балдарга ар бир окуу күнү балмуздак",
+    icon: IceCream2,
+  },
+  {
+    id: "icecream-top",
+    title: "Аптанын мыкты үч окуучусуна кошумча балмуздак",
+    icon: Star,
+  },
+  {
+    id: "certificates",
+    title: "Грамоталар жана белектер",
+    icon: Award,
+  },
+  {
+    id: "monthly-award",
+    title: "Айдын мыкты окуучусуна сыйлык",
+    icon: Medal,
+  },
+  {
+    id: "quran-award",
+    title: "Куран окууга өткөн окуучуларга сыйлык",
+    icon: Gift,
+  },
+  {
+    id: "org",
+    title: "Курстун уюштуруучулук чыгымдары",
+    icon: Package,
+  },
+];
+
+export const FAQ: readonly FaqItem[] = [
+  {
+    id: "start",
+    question: "Окуу качан башталат?",
+    answer:
+      "Кеминде 25 окуучу топтолгондон кийин курс расмий түрдө башталат.",
+  },
+  {
+    id: "days",
+    question: "Сабактар кайсы күндөрү өтөт?",
+    answer: "Сабактар ишемби жана жекшемби күндөрү мечитте өтөт.",
+  },
+  {
+    id: "duration",
+    question: "Сабак канча убакытка созулат?",
+    answer:
+      "Негизги сабак Бешим намазынан Аср намазына чейин. Асрдан кийин дагы 1 саат кошумча сабак өтөт.",
+  },
+  {
+    id: "what",
+    question: "Балдар эмнелерди үйрөнүшөт?",
+    answer:
+      "Муаллим Саани, Куран окуу, тажвид, Куран жаттоо, дуалар, даарат жана намаз үйрөтүлөт.",
+  },
+  {
+    id: "price",
+    question: "Катышуу акысы канча?",
+    answer:
+      "10 000 сом. Төлөм боюнча кошумча маалымат каттоо учурунда берилет.",
+  },
+  {
+    id: "beginner",
+    question: "Балам Куран окуганды билбесе катыша алабы?",
+    answer:
+      "Ооба. Окутуу баланын азыркы деңгээлине жараша башталат — тамга билбегендер да кабыл алынат.",
+  },
+  {
+    id: "cleaning",
+    question: "Мечитти тазалоого балдар катышабы?",
+    answer:
+      "Ооба, жашына ылайыктуу жеңил тарбиялык тазалык иштерине чоңдордун көзөмөлү астында катышышат.",
+  },
+  {
+    id: "refund",
+    question: "Төлөм кайтарылып бериле турган учурлар барбы?",
+    answer:
+      "Ооба. Эгер сабак баштала электе төлөм кылсаңыз, окуу башталганга чейин акчаңыз толугу менен кайтарылат. Эгер сабак башталып, кийин уланта албай калсаңыз, калган мөөнөттүн төлөмүнүн 50% кайтарылат.",
+  },
+  {
+    id: "report",
+    question: "Акчанын кайда жумшалганы боюнча маалымат берилеби?",
+    answer:
+      "Ооба. Ата-энелерге төлөмдөрдүн кайда жана кандай жумшалганы боюнча толук отчет берилет.",
+  },
+];
+
