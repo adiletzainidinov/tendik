@@ -2,6 +2,7 @@
 
 import { ArrowRight, BookOpenText, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/config/site-config";
 import { useRegistrationStore } from "@/store/registration-store";
 
 export function HeroSection() {
@@ -23,7 +24,7 @@ export function HeroSection() {
         <div className="relative z-10 flex flex-col gap-5 text-white">
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-[12px] font-medium tracking-wide text-white/90 backdrop-blur">
             <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-accent" />
-            Мечиттеги Куран курсу
+            {siteConfig.tagline}
           </span>
           <h1
             id="hero-title"
@@ -36,12 +37,15 @@ export function HeroSection() {
             Тажрыйбалуу устаздардын жетекчилиги астында тынч жана тартиптүү
             чөйрөдө өтөт.
           </p>
-          <div className="mt-1 flex items-center gap-2 rounded-2xl border border-white/20 bg-white/10 px-3.5 py-3 backdrop-blur">
+          <div
+            role="note"
+            className="mt-1 flex items-start gap-2.5 rounded-r-lg border-l-2 border-accent bg-white/[0.06] px-3.5 py-2.5"
+          >
             <BookOpenText
               aria-hidden
-              className="h-5 w-5 shrink-0 text-accent"
+              className="mt-0.5 h-4 w-4 shrink-0 text-accent"
             />
-            <p className="text-[13.5px] leading-snug text-white/95">
+            <p className="text-[13px] leading-snug text-white/90">
               Курс{" "}
               <span className="font-semibold text-white">25 окуучу</span>{" "}
               топтолгондон кийин башталат

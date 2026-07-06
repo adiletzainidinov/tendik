@@ -1,7 +1,7 @@
 export const siteConfig = {
-  name: "QoranLearn",
+  name: "Теңдик",
   tagline: "Мечиттеги Куран курсу",
-  metadataTitle: "QoranLearn — Балдар үчүн Куран үйрөнүү курсу",
+  metadataTitle: "Теңдик — Балдар үчүн Куран үйрөнүү курсу",
   metadataDescription:
     "Мечитте ишемби жана жекшемби күндөрү өтүүчү балдар үчүн Куран, тажвид, дуа, даарат жана намаз үйрөтүү курсу.",
 
