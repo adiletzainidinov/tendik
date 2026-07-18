@@ -45,7 +45,7 @@ export function SiteHeader() {
           </span>
           <span className="flex flex-col leading-tight">
             <span className="text-[15px] font-semibold tracking-[-0.01em] text-text">
-              {siteConfig.name}
+              {siteConfig.name} <span className="font-normal text-muted">Адилет</span>
             </span>
             <span className="text-[11px] text-muted">
               {siteConfig.tagline}
