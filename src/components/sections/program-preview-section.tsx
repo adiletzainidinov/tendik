@@ -2,6 +2,7 @@ import Link from "next/link";
 import {
   BookOpenText,
   ChevronRight,
+  Clock,
   Droplets,
   GraduationCap,
   HandHeart,
@@ -45,7 +46,8 @@ export function ProgramPreviewSection() {
         {[
           { value: "80 сабак", icon: ListChecks },
           { value: `${months} ай`, icon: MoonStar },
-          { value: "6 сааттык сабак", icon: BookOpenText },
+          { value: "14:00дө башталат", icon: Clock },
+          { value: "3–6 саат", icon: BookOpenText },
           { value: "Жаш куракка ылайык", icon: Users },
         ].map((stat) => (
           <div
@@ -61,6 +63,11 @@ export function ProgramPreviewSection() {
           </div>
         ))}
       </div>
+
+      <p className="mt-2 text-[12.5px] leading-relaxed text-muted">
+        Сабак Бешим намазынан кийин башталып, Шам намазына 30 мүнөт калганда
+        бүтөт. Узактыгы мезгилге жараша өзгөрөт.
+      </p>
 
       <div className="mt-4 flex flex-col gap-1.5">
         {DIRECTIONS.map(({ label, icon: Icon }) => (

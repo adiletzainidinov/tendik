@@ -44,7 +44,7 @@ export function ProgramContent() {
           <ul className="grid grid-cols-2 gap-1.5">
             {[
               { label: "Программанын максаты", href: "#objective" },
-              { label: "6 сааттык түзүлүш", href: "#schedule-structure" },
+              { label: "Окуу күнүнүн түзүлүшү", href: "#schedule-structure" },
               { label: "Муаллим Сани", href: "#muallim-sani" },
               ...PROGRAM_MODULES.map((m) => ({
                 label: `${m.romanNumber} бөлүм`,
@@ -76,7 +76,7 @@ export function ProgramContent() {
       >
         <SectionHeading
           eyebrow="Бир сабак"
-          title="6 сааттык түзүлүш"
+          title="Окуу күнүнүн түзүлүшү"
           titleId="schedule-structure-title"
         />
         <div className="mt-3 flex flex-col gap-1">
@@ -86,15 +86,15 @@ export function ProgramContent() {
               className="rounded-xl border border-border bg-surface px-3.5 py-2.5"
             >
               <div className="flex items-center gap-2">
-                <span className="shrink-0 text-[12px] font-semibold text-primary-dark">
-                  {item.time}
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-primary-soft text-[11px] font-bold text-primary-dark">
+                  {i + 1}
                 </span>
                 <span className="text-[13.5px] font-medium text-text">
                   {item.title}
                 </span>
               </div>
               {item.details && (
-                <ul className="mt-1.5 flex flex-col gap-0.5 pl-[72px]">
+                <ul className="mt-1.5 flex flex-col gap-0.5 pl-8">
                   {item.details.map((d, j) => (
                     <li key={j} className="text-[12.5px] text-muted">
                       {d}
@@ -105,8 +105,9 @@ export function ProgramContent() {
             </div>
           ))}
         </div>
-        <p className="mt-2 text-[13px] font-medium text-primary-dark">
-          Муаллим Сани жалпы: 2 саат.
+        <p className="mt-2 text-[12.5px] leading-relaxed text-muted">
+          Этаптардын узактыгы мезгилге жана балдардын жаш курагына жараша
+          ийкемдүү өзгөрөт. Так мүнөттөр белгиленбейт.
         </p>
       </section>
 

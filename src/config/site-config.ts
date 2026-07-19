@@ -87,6 +87,16 @@ export const siteConfig = {
   },
 
   courseDays: ["Ишемби", "Жекшемби"] as const,
+
+  courseSchedule: {
+    startTime: "14:00",
+    startsAfterPrayer: "Бешим",
+    dismissalBeforePrayer: "Шам",
+    dismissalBeforePrayerMinutes: 30,
+    minDurationHours: 3,
+    maxDurationHours: 6,
+    summerApproximateEndTime: "20:00",
+  },
 } as const;
 
 export type SiteConfig = typeof siteConfig;

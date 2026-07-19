@@ -42,7 +42,8 @@ export function ProgramHero() {
         {[
           { value: "80 сабак" },
           { value: "8 негизги бөлүм" },
-          { value: "6 сааттык сабак" },
+          { value: "14:00дө башталат" },
+          { value: "3–6 сааттык окуу күнү" },
           { value: `${months} айлык программа` },
         ].map((stat) => (
           <div
@@ -55,6 +56,11 @@ export function ProgramHero() {
           </div>
         ))}
       </div>
+
+      <p className="mt-3 rounded-xl bg-surface-soft/70 px-3.5 py-2.5 text-[13px] leading-relaxed text-muted">
+        Сабак Бешим намазынан кийин башталып, Шам намазына 30 мүнөт калганда
+        бүтөт. Мезгилге жараша 3–6 саат созулат.
+      </p>
 
       <div className="mt-5 flex flex-col gap-2.5">
         <Button variant="primary" size="lg" onClick={open} fullWidth>

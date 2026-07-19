@@ -3,7 +3,6 @@ export type ProgramObjective = {
 };
 
 export type LessonScheduleItem = {
-  time: string;
   title: string;
   details?: readonly string[];
 };
