@@ -103,6 +103,10 @@
     touch-action: none;
   }
 
+  [id] {
+    scroll-margin-top: 4rem;
+  }
+
   .decor-arch {
     background:
       radial-gradient(
