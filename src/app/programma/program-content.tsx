@@ -61,7 +61,7 @@ export function ProgramContent() {
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="flex min-h-9 items-center rounded-lg border border-border bg-surface-soft/70 px-2.5 py-1.5 text-[12.5px] font-medium text-primary-dark transition-colors hover:bg-primary-soft"
+                  className="flex min-h-9 items-center rounded-lg border border-border bg-surface px-2.5 py-1.5 text-[12.5px] font-medium text-primary-dark transition-colors hover:border-accent/40 hover:bg-accent-soft"
                 >
                   {item.label}
                 </a>
@@ -169,15 +169,19 @@ export function ProgramContent() {
               id={mod.id}
               className="scroll-mt-16"
             >
-              <div className="flex items-center gap-2.5 rounded-2xl border border-primary/25 bg-primary-soft/60 px-4 py-3 shadow-[var(--shadow-soft)]">
-                <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary text-[13px] font-bold text-white">
+              <div className="decor-hero relative flex items-center gap-2.5 overflow-hidden rounded-2xl px-4 py-3.5 text-white shadow-[var(--shadow-soft)]">
+                <div
+                  aria-hidden
+                  className="pattern-ethnic-dark pointer-events-none absolute inset-0 opacity-35"
+                />
+                <span className="relative inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-accent/50 bg-white/[0.08] text-[13px] font-bold text-[#f2cf6f]">
                   {mod.romanNumber}
                 </span>
-                <div className="flex flex-col leading-tight">
-                  <span className="text-[14.5px] font-semibold text-primary-dark">
+                <div className="relative flex flex-col leading-tight">
+                  <span className="text-[14.5px] font-semibold text-white">
                     {mod.title}
                   </span>
-                  <span className="text-[12px] text-muted">
+                  <span className="text-[12px] text-white/70">
                     {mod.lessonRange}-сабактар · {mod.lessons.length} сабак
                   </span>
                 </div>

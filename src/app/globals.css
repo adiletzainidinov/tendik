@@ -1,18 +1,32 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #f7f4ec;
-  --color-surface: #ffffff;
-  --color-surface-soft: #eef5ef;
-  --color-primary: #0f5132;
-  --color-primary-dark: #0a3d27;
-  --color-primary-soft: #e6efe9;
-  --color-accent: #c89b3c;
-  --color-accent-soft: #f4e9cf;
-  --color-text: #17211b;
-  --color-muted: #68736c;
-  --color-border: #dfe7e1;
+  /*
+   * "Кыргызская национальная идентичность в современной цифровой форме".
+   * Deep kyrgyz crimson + warm gold + ivory/sand neutrals, with a muted
+   * forest green reserved for the Islamic educational context.
+   */
+  --color-background: #faf6ec;
+  --color-surface: #fffdf6;
+  --color-surface-soft: #f4edde;
+  --color-primary: #9e1b32;
+  --color-primary-dark: #6f1223;
+  --color-primary-soft: #f9e8e6;
+  --color-accent: #c6952f;
+  --color-accent-soft: #f7ecd0;
+  --color-forest: #1e6b4e;
+  --color-forest-soft: #e7f0e9;
+  --color-text: #241b15;
+  --color-muted: #79695a;
+  --color-border: #e9ddc7;
   --color-danger: #b42318;
+  /*
+   * Красно-золотая пара для стилизованных национальных мотивов
+   * (NationalMotifChip и т.п.). Декоративная палитра; официальную
+   * цветовую спецификацию госсимволов не утверждает — см. ATTRIBUTION.md.
+   */
+  --color-national-red: #e8112d;
+  --color-national-gold: #ffdd00;
 
   --font-sans:
     "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -24,10 +38,11 @@
   --radius-xl: 1.25rem;
   --radius-2xl: 1.5rem;
 
-  --shadow-soft: 0 1px 2px rgba(15, 81, 50, 0.04),
-    0 8px 24px rgba(15, 81, 50, 0.06);
-  --shadow-elevated: 0 4px 12px rgba(15, 81, 50, 0.08),
-    0 20px 40px rgba(15, 81, 50, 0.1);
+  --shadow-soft: 0 1px 2px rgba(111, 18, 35, 0.04),
+    0 8px 24px rgba(111, 18, 35, 0.07);
+  --shadow-elevated: 0 4px 12px rgba(111, 18, 35, 0.08),
+    0 20px 44px rgba(111, 18, 35, 0.14);
+  --shadow-gold: 0 10px 30px rgba(198, 149, 47, 0.3);
 }
 
 @layer base {
@@ -52,7 +67,20 @@
 
   body {
     font-family: var(--font-sans);
-    background-color: #eae4d5;
+    /* Premium outer canvas around the mobile shell on wide screens. */
+    background-color: #1a1210;
+    background-image:
+      radial-gradient(
+        90% 60% at 50% -10%,
+        rgba(158, 27, 50, 0.32) 0%,
+        rgba(158, 27, 50, 0) 60%
+      ),
+      radial-gradient(
+        70% 50% at 50% 110%,
+        rgba(198, 149, 47, 0.12) 0%,
+        rgba(198, 149, 47, 0) 55%
+      );
+    background-attachment: fixed;
     color: var(--color-text);
     line-height: 1.55;
     -webkit-font-smoothing: antialiased;
@@ -69,8 +97,9 @@
   h5,
   h6 {
     color: var(--color-text);
-    letter-spacing: -0.01em;
-    font-weight: 600;
+    letter-spacing: -0.015em;
+    font-weight: 650;
+    text-wrap: balance;
   }
 
   button {
@@ -107,45 +136,56 @@
     scroll-margin-top: 4rem;
   }
 
-  .decor-arch {
+  /* Deep crimson hero canvas with a warm gold aura. */
+  .decor-hero {
     background:
       radial-gradient(
-        140% 90% at 50% -30%,
-        rgba(200, 155, 60, 0.14) 0%,
-        rgba(200, 155, 60, 0) 55%
+        130% 80% at 50% -20%,
+        rgba(255, 221, 0, 0.14) 0%,
+        rgba(255, 221, 0, 0) 55%
       ),
-      linear-gradient(180deg, #0f5132 0%, #0a3d27 100%);
+      linear-gradient(168deg, #7c1327 0%, #9e1b32 46%, #5c0f1e 100%);
   }
 
+  /* Deep bordeaux canvas for the final CTA and footer. */
+  .decor-deep {
+    background:
+      radial-gradient(
+        120% 90% at 85% -20%,
+        rgba(198, 149, 47, 0.2) 0%,
+        rgba(198, 149, 47, 0) 55%
+      ),
+      linear-gradient(180deg, #5f101f 0%, #480c18 100%);
+  }
+
+  /*
+   * Subtle kyrgyz "кочкор мүйүз" (ram-horn) tile — gold, for dark surfaces.
+   * Kept extremely quiet so it never competes with text.
+   */
+  .pattern-ethnic-dark {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23ffdd00' stroke-opacity='0.16' stroke-width='1.2'%3E%3Cpath d='M28 14c7 0 12 5 12 11 0 4.4-3 7-6.4 7-2.8 0-4.6-1.8-4.6-4.2 0-2 1.4-3.4 3.2-3.4'/%3E%3Cpath d='M28 14c-7 0-12 5-12 11 0 4.4 3 7 6.4 7 2.8 0 4.6-1.8 4.6-4.2 0-2-1.4-3.4-3.2-3.4'/%3E%3Cpath d='M28 44v-8'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 56px 56px;
+  }
+
+  /* Same motif in crimson for light ivory surfaces. */
+  .pattern-ethnic-light {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%239e1b32' stroke-opacity='0.07' stroke-width='1.2'%3E%3Cpath d='M28 14c7 0 12 5 12 11 0 4.4-3 7-6.4 7-2.8 0-4.6-1.8-4.6-4.2 0-2 1.4-3.4 3.2-3.4'/%3E%3Cpath d='M28 14c-7 0-12 5-12 11 0 4.4 3 7 6.4 7 2.8 0 4.6-1.8 4.6-4.2 0-2-1.4-3.4-3.2-3.4'/%3E%3Cpath d='M28 44v-8'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 56px 56px;
+  }
+
+  /* Fine dotted texture for deep surfaces. */
   .pattern-dots {
     background-image: radial-gradient(
-      rgba(15, 81, 50, 0.08) 1px,
+      rgba(255, 221, 0, 0.14) 1px,
       transparent 1px
     );
     background-size: 14px 14px;
   }
 
-  .divider-dot::before {
-    content: "";
-    display: inline-block;
-    width: 4px;
-    height: 4px;
-    border-radius: 999px;
-    background: currentColor;
-    opacity: 0.5;
-    margin: 0 8px 2px;
-    vertical-align: middle;
-  }
-}
-
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translate3d(0, 10px, 0);
-  }
-  to {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
+  /* Thin double gold frame used on premium blocks. */
+  .frame-gold {
+    border: 1px solid rgba(198, 149, 47, 0.45);
+    box-shadow: inset 0 0 0 3px rgba(198, 149, 47, 0.12);
   }
 }
 
@@ -193,8 +233,14 @@
   }
 }
 
-.animate-fade-in-up {
-  animation: fade-in-up 0.55s ease-out both;
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0);
+  }
 }
 
 .animate-fade-in {
@@ -217,6 +263,10 @@
   animation: sticky-in 0.3s ease-out both;
 }
 
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -227,5 +277,8 @@
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+  }
+  .animate-float-slow {
+    animation: none !important;
   }
 }

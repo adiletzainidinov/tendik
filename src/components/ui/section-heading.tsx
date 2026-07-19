@@ -27,22 +27,25 @@ export function SectionHeading({
       )}
     >
       {eyebrow && (
-        <span className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-3 py-1 text-[12px] font-medium tracking-wide text-primary-dark uppercase">
-          <span
+        <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent-soft px-3 py-1 text-[12px] font-medium tracking-wide text-primary-dark uppercase">
+          <svg
             aria-hidden
-            className="h-1.5 w-1.5 rounded-full bg-accent"
-          />
+            viewBox="0 0 8 8"
+            className="h-2 w-2 shrink-0 text-accent"
+          >
+            <path d="M4 0l4 4-4 4-4-4z" fill="currentColor" />
+          </svg>
           {eyebrow}
         </span>
       )}
       <h2
         id={titleId}
-        className="text-[22px] leading-[1.25] font-semibold text-text sm:text-[24px]"
+        className="text-[22px] leading-[1.22] font-semibold text-text sm:text-[24px]"
       >
         {title}
       </h2>
       {description && (
-        <p className="text-[15px] leading-relaxed text-muted">{description}</p>
+        <p className="text-[14.5px] leading-relaxed text-muted">{description}</p>
       )}
     </header>
   );

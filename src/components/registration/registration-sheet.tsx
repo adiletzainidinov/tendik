@@ -78,7 +78,7 @@ export function RegistrationSheet() {
         aria-label="Форманы жабуу"
         onClick={close}
         tabIndex={isOpen ? 0 : -1}
-        className="absolute inset-0 bg-primary-dark/45 backdrop-blur-[2px]"
+        className="absolute inset-0 bg-[#2a0910]/55 backdrop-blur-[3px]"
       />
 
       <div
@@ -86,16 +86,25 @@ export function RegistrationSheet() {
         className={cn(
           "relative flex w-full max-w-[500px] flex-col overflow-hidden",
           "max-h-[92dvh]",
-          "bg-background shadow-[0_-10px_40px_rgba(15,81,50,0.2)]",
-          "border border-border",
+          "bg-background shadow-[0_-10px_44px_rgba(74,10,22,0.35)]",
+          "border border-accent/30",
           "rounded-t-3xl",
           "transition-transform duration-300 ease-out",
           isOpen ? "translate-y-0" : "translate-y-full",
         )}
       >
-        <div className="flex items-start justify-between gap-3 border-b border-border/70 bg-background px-5 pt-4 pb-3">
+        {/* Золотая орнаментальная кромка листа */}
+        <div
+          aria-hidden
+          className="h-[3px] w-full shrink-0 bg-gradient-to-r from-primary via-accent to-primary"
+        />
+        <div
+          aria-hidden
+          className="mx-auto mt-2 h-1 w-10 shrink-0 rounded-full bg-border"
+        />
+        <div className="flex items-start justify-between gap-3 border-b border-border/70 bg-background px-5 pt-2 pb-3">
           <div className="flex flex-col">
-            <span className="text-[12px] font-medium tracking-wide text-primary-dark uppercase">
+            <span className="text-[12px] font-medium tracking-wide text-primary uppercase">
               Каттоо
             </span>
             <h2
@@ -112,7 +121,7 @@ export function RegistrationSheet() {
             tabIndex={isOpen ? 0 : -1}
             className={cn(
               "inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full",
-              "bg-surface-soft text-primary-dark transition-colors hover:bg-primary-soft",
+              "border border-border bg-surface text-primary-dark transition-colors hover:bg-primary-soft",
             )}
           >
             <X aria-hidden className="h-5 w-5" />
