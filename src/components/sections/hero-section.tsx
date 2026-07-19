@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site-config";
 import { useRegistrationStore } from "@/store/registration-store";
 import { TundukMark } from "@/components/decor/tunduk-mark";
-import { NationalBadge } from "@/components/decor/kyrgyz-flag";
+import { NationalBadge } from "@/components/decor/national-motif";
 import { AlaTooSilhouette } from "@/components/decor/ala-too-silhouette";
 import { OrnamentRow } from "@/components/decor/kyrgyz-ornament";
 

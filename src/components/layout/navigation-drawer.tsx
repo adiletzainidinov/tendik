@@ -9,7 +9,7 @@ import { siteConfig } from "@/config/site-config";
 import { QUICK_CONTACT_URL } from "@/lib/whatsapp";
 import { useRegistrationStore } from "@/store/registration-store";
 import { TundukMark } from "@/components/decor/tunduk-mark";
-import { NationalMotifChip } from "@/components/decor/kyrgyz-flag";
+import { NationalMotifChip } from "@/components/decor/national-motif";
 
 type NavLink = {
   label: string;

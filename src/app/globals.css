@@ -22,11 +22,11 @@
   --color-danger: #b42318;
   /*
    * Красно-золотая пара для стилизованных национальных мотивов
-   * (NationalMotifChip и т.п.). Не является утверждением официальной
-   * цветовой спецификации государственных символов — см. ATTRIBUTION.md.
+   * (NationalMotifChip и т.п.). Декоративная палитра; официальную
+   * цветовую спецификацию госсимволов не утверждает — см. ATTRIBUTION.md.
    */
-  --color-flag-red: #e8112d;
-  --color-flag-gold: #ffdd00;
+  --color-national-red: #e8112d;
+  --color-national-gold: #ffdd00;
 
   --font-sans:
     "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,

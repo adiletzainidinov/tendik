@@ -9,7 +9,7 @@ import { InstagramIcon } from "@/components/ui/instagram-icon";
 import { siteConfig } from "@/config/site-config";
 import { QUICK_CONTACT_URL } from "@/lib/whatsapp";
 import { TundukMark } from "@/components/decor/tunduk-mark";
-import { NationalMotifChip } from "@/components/decor/kyrgyz-flag";
+import { NationalMotifChip } from "@/components/decor/national-motif";
 import { OrnamentRow } from "@/components/decor/kyrgyz-ornament";
 
 export function SiteFooter() {
@@ -147,13 +147,12 @@ export function SiteFooter() {
         </p>
 
         {/*
-         * Национальный блок. Сейчас здесь стилизованный декоративный мотив
-         * түндүк (NationalMotifChip) — официальная государственная символика
-         * не изображается. Когда в public/national-symbols/ появятся
-         * проверенные официальные SVG флага и/или герба КР (порядок описан
-         * в ATTRIBUTION.md), их следует отрисовать в этом блоке через
-         * компонент KyrgyzFlag / аналогичный компонент герба с корректным
-         * alt. Приблизительные/самодельные версии размещать нельзя.
+         * Национальный блок. Официальная государственная символика (флаг,
+         * герб КР) пока отсутствует — здесь только декоративный
+         * NationalMotifChip. Официальный флаг или герб добавляется отдельным
+         * проверенным PR: локальный asset в public/national-symbols/ и новый
+         * компонент с корректными alt, width и height (см. ATTRIBUTION.md).
+         * Приблизительные/самодельные версии размещать нельзя.
          */}
         <div className="flex items-center gap-3 rounded-2xl border border-white/12 bg-white/[0.05] px-4 py-3">
           <NationalMotifChip className="h-8 w-8 rounded-lg" />
