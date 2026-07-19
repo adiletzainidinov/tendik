@@ -4,6 +4,7 @@ import { cn } from "@/lib/cn";
 type SectionHeadingProps = {
   eyebrow?: string;
   title: string;
+  titleId?: string;
   description?: string;
   className?: string;
   align?: "left" | "center";
@@ -12,6 +13,7 @@ type SectionHeadingProps = {
 export function SectionHeading({
   eyebrow,
   title,
+  titleId,
   description,
   className,
   align = "left",
@@ -33,7 +35,10 @@ export function SectionHeading({
           {eyebrow}
         </span>
       )}
-      <h2 className="text-[22px] leading-[1.25] font-semibold text-text sm:text-[24px]">
+      <h2
+        id={titleId}
+        className="text-[22px] leading-[1.25] font-semibold text-text sm:text-[24px]"
+      >
         {title}
       </h2>
       {description && (
