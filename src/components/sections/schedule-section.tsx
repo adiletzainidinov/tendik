@@ -15,7 +15,7 @@ export function ScheduleSection() {
         eyebrow="Убакыт"
         title="Сабактардын күнү жана убактысы"
         titleId="schedule-title"
-        description="Убакыт намаз убактыларына негизделген. Ошондуктан так саат эмес, намаз убактысы менен көрсөтүлөт."
+        description={`Сабактар ${courseSchedule.startsAfterPrayer} намазынан кийин, саат ${courseSchedule.startTime}дө башталып, ${courseSchedule.dismissalBeforePrayer} намазына ${courseSchedule.dismissalBeforePrayerMinutes} мүнөт калганда аяктайт. Ошондуктан окуу күнүнүн узактыгы мезгилге жараша өзгөрөт.`}
       />
 
       <div className="mt-5 grid grid-cols-2 gap-2">
@@ -40,8 +40,7 @@ export function ScheduleSection() {
       </div>
 
       <p className="mt-3 rounded-xl bg-surface-soft/70 px-3.5 py-2.5 text-[12.5px] leading-relaxed text-muted">
-        Так убакыт мезгилге жана намаз убактысына жараша өзгөрөт. Жайында сабак
-        ≈ {courseSchedule.summerApproximateEndTime}гө чейин созулушу мүмкүн.
+        {`Так аяктоо убактысы мезгилге жана ${courseSchedule.dismissalBeforePrayer} намазынын убактысына жараша ата-энелерге алдын ала маалымдалат. Жайында сабак ${courseSchedule.summerApproximateEndTime} чамасына чейин созулушу мүмкүн.`}
       </p>
     </section>
   );
