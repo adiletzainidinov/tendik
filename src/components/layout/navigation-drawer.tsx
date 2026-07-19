@@ -98,11 +98,9 @@ export function NavigationDrawer({
   };
 
   function isActive(href: string): boolean {
-    const basePath = href.split("#")[0] || "/";
-    if (basePath === "/") {
-      return pathname === "/" && href === "/";
-    }
-    return pathname === basePath;
+    if (href.includes("#")) return false;
+    if (href === "/") return pathname === "/";
+    return pathname === href;
   }
 
   return (
@@ -127,6 +125,7 @@ export function NavigationDrawer({
 
         <div
           ref={drawerRef}
+          id="navigation-drawer"
           role="dialog"
           aria-modal="true"
           aria-labelledby="nav-drawer-title"

@@ -61,7 +61,7 @@ export function SiteHeader() {
             onClick={() => setDrawerOpen(true)}
             aria-label="Менюну ачуу"
             aria-expanded={drawerOpen}
-            aria-controls="nav-drawer-title"
+            aria-controls="navigation-drawer"
             className={cn(
               "inline-flex h-11 w-11 items-center justify-center rounded-full",
               "bg-surface-soft text-primary-dark transition-colors hover:bg-primary-soft active:scale-[0.97]",

@@ -25,7 +25,7 @@ export function ProgramHero() {
         id="program-hero-title"
         className="mt-3 text-[26px] leading-[1.2] font-semibold tracking-[-0.015em] text-text sm:text-[28px]"
       >
-        Исламдын негиздери
+        ИСЛАМДЫН НЕГИЗДЕРИ
       </h1>
 
       <p className="mt-1.5 text-[15px] font-medium text-primary-dark">

@@ -27,7 +27,7 @@ export function ProgramLessonAccordion({
         <button
           type="button"
           onClick={() => setExpanded(true)}
-          className="mb-1 self-start rounded-lg bg-primary-soft px-3 py-1.5 text-[12.5px] font-medium text-primary-dark transition-colors hover:bg-accent-soft"
+          className="mb-1 min-h-11 self-start rounded-lg bg-primary-soft px-3 py-1.5 text-[12.5px] font-medium text-primary-dark transition-colors hover:bg-accent-soft"
         >
           Сабактарды көрсөтүү ({lessons.length})
         </button>
@@ -100,7 +100,7 @@ export function ProgramLessonAccordion({
             setExpanded(false);
             setOpenLesson(null);
           }}
-          className="mt-1 self-start rounded-lg bg-surface-soft px-3 py-1.5 text-[12.5px] font-medium text-muted transition-colors hover:bg-primary-soft hover:text-primary-dark"
+          className="mt-1 min-h-11 self-start rounded-lg bg-surface-soft px-3 py-1.5 text-[12.5px] font-medium text-muted transition-colors hover:bg-primary-soft hover:text-primary-dark"
         >
           Жыйноо
         </button>

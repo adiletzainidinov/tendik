@@ -1258,4 +1258,6 @@ function validateProgram() {
   }
 }
 
-validateProgram();
+if (process.env.NODE_ENV !== "production") {
+  validateProgram();
+}
