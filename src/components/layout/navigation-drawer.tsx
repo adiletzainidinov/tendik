@@ -16,8 +16,9 @@ type NavLink = {
 
 const NAV_LINKS: readonly NavLink[] = [
   { label: "Башкы бет", href: "/" },
-  { label: "Баалар жана орундар", href: "/#pricing" },
+  { label: "Бала эмнени үйрөнөт?", href: "/#value" },
   { label: "Исламдын негиздери — 80 сабак", href: "/programma" },
+  { label: "Баалар жана орундар", href: "/maalymat#pricing" },
   { label: "Курс жөнүндө", href: "/maalymat" },
   { label: "Окуу багыттары", href: "/maalymat#curriculum" },
   { label: "Балдарды мотивациялоо", href: "/maalymat#motivation" },

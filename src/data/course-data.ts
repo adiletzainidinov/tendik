@@ -122,34 +122,46 @@ export const CURRICULUM: readonly CurriculumItem[] = [
 
 export const BENEFITS: readonly BenefitItem[] = [
   {
-    id: "focus-quran",
-    title: "Негизги көңүл Куран үйрөнүүгө бурулат",
+    id: "quran-foundation",
+    title: "Куран окууга бекем негиз",
+    description:
+      "Муаллим Сани аркылуу араб тамгаларын таанып, туура айтууга жана Куран окууга даярданат.",
     icon: BookOpenText,
   },
   {
-    id: "experienced",
-    title: "Тажрыйбалуу устаздар",
-    icon: GraduationCap,
+    id: "wudu-namaz-practice",
+    title: "Даарат жана намаз практикасы",
+    description:
+      "Мугалимдин көрсөтүүсү менен даараттын жана намаздын негизги тартибин практикада кайталайт.",
+    icon: Droplets,
   },
   {
-    id: "weekend",
-    title: "Дем алыш күндөрү ыңгайлуу убакыт",
-    icon: CalendarDays,
+    id: "daily-duas",
+    title: "Күнүмдүк керектүү дубалар",
+    description:
+      "Дубаларды туура айтып, маанисин түшүнүп жана кайсы учурда окулаарын үйрөнөт.",
+    icon: HandHeart,
   },
   {
-    id: "full-program",
-    title: "Куран, тажвид, дуа, даарат жана намаз",
-    icon: BookMarked,
+    id: "iman-islam",
+    title: "Ыйман жана Исламдын негиздери",
+    description:
+      "Ыймандын алты шартын, Исламдын беш шартын жана негизги ибадаттарды жашына ылайык түшүнөт.",
+    icon: MoonStar,
   },
   {
-    id: "discipline",
-    title: "Тартип жана жоопкерчилик",
+    id: "adep-responsibility",
+    title: "Жакшы адеп жана жоопкерчилик",
+    description:
+      "Ата-энеге урмат, чынчылдык, тазалык, сабыр, аманат жана башкаларга жакшы мамиле темаларын өтөт.",
+    icon: HeartHandshake,
+  },
+  {
+    id: "parent-report",
+    title: "Ата-энеге айлык отчет",
+    description:
+      "Ар айдын аягында баланын окуусу, дубалары, намазы, адеби жана кийинки максаты боюнча маалымат берилет.",
     icon: ShieldCheck,
-  },
-  {
-    id: "rewards",
-    title: "Сыйлыктар жана мотивация",
-    icon: Award,
   },
 ];
 

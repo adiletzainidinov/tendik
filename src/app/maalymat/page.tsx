@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { SitePageShell } from "@/components/layout/site-page-shell";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { BenefitsSection } from "@/components/sections/benefits-section";
+import { PricingSection } from "@/components/sections/pricing-section";
 import { CurriculumSection } from "@/components/sections/curriculum-section";
 import { LearningPathSection } from "@/components/sections/learning-path-section";
 import { MotivationSection } from "@/components/sections/motivation-section";
@@ -36,10 +36,10 @@ export default function MaalymatPage() {
         <SectionHeading
           eyebrow="Курс жөнүндө"
           title="Толук маалымат"
-          description="Окуу багыттары, балдарды мотивациялоо, төлөм тартиби жана ата-энелер үчүн керектүү маалымат."
+          description="Баалар, окуу багыттары, балдарды мотивациялоо, төлөм тартиби жана ата-энелер үчүн керектүү маалымат."
         />
       </div>
-      <BenefitsSection />
+      <PricingSection />
       <CurriculumSection />
       <LearningPathSection />
       <MotivationSection />
