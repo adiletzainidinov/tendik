@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowRight, BookOpenText, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site-config";
 import { useRegistrationStore } from "@/store/registration-store";
@@ -8,8 +8,8 @@ import { useRegistrationStore } from "@/store/registration-store";
 export function HeroSection() {
   const open = useRegistrationStore((s) => s.open);
 
-  const scrollToCurriculum = () => {
-    const el = document.getElementById("curriculum");
+  const scrollToValue = () => {
+    const el = document.getElementById("value");
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
@@ -30,28 +30,34 @@ export function HeroSection() {
             id="hero-title"
             className="text-[28px] leading-[1.2] font-semibold tracking-[-0.015em] text-white sm:text-[30px]"
           >
-            Балаңыз Куранды туура окуп үйрөнсүн
+            Балаңыз Куранга жакындап, намазды жана жакшы адепти үйрөнсүн
           </h1>
           <p className="max-w-[420px] text-[15px] leading-relaxed text-white/85">
-            Балдар үчүн мечитте өтүүчү дем алыш күндөрүндөгү Куран курсу.
-            Тажрыйбалуу устаздардын жетекчилиги астында тынч жана тартиптүү
-            чөйрөдө өтөт.
+            Муаллим Сани, дуба, даарат, намаз, ыйман, сира жана адеп-ахлакты
+            камтыган 80 сабактык, жаш куракка ылайык окуу программасы.
           </p>
           <div
             role="note"
             className="mt-1 flex items-start gap-2.5 rounded-r-lg border-l-2 border-accent bg-white/[0.06] px-3.5 py-2.5"
           >
-            <BookOpenText
-              aria-hidden
-              className="mt-0.5 h-4 w-4 shrink-0 text-accent"
-            />
             <p className="text-[13px] leading-snug text-white/90">
-              Сабактар негизги топ{" "}
-              <span className="font-semibold text-white">
-                ({siteConfig.minimumStudents} окуучу)
-              </span>{" "}
-              толгондон кийин башталат
+              Куран окуу, намаз, дуба жана исламдык тарбия — бир толук
+              программада.
             </p>
+          </div>
+          <div className="flex items-center gap-3">
+            {[
+              "80 сабак",
+              `${siteConfig.pricing.programDurationMonths} ай`,
+              "Жаш куракка ылайык",
+            ].map((stat) => (
+              <span
+                key={stat}
+                className="rounded-full border border-white/20 bg-white/10 px-2.5 py-1 text-[11.5px] font-medium text-white/90"
+              >
+                {stat}
+              </span>
+            ))}
           </div>
         </div>
 
@@ -69,11 +75,11 @@ export function HeroSection() {
           <Button
             variant="ghost"
             size="lg"
-            onClick={scrollToCurriculum}
+            onClick={scrollToValue}
             fullWidth
             className="!bg-white/10 !text-white border border-white/25 hover:!bg-white/15"
           >
-            Программаны көрүү
+            Бала эмнени үйрөнөт?
             <ChevronDown aria-hidden className="h-4 w-4" />
           </Button>
         </div>
