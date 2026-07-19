@@ -8,11 +8,17 @@ type MobileShellProps = {
 
 export function MobileShell({ children, className }: MobileShellProps) {
   return (
-    <div className="flex min-h-[100dvh] w-full justify-center bg-[#eae4d5]">
+    <div className="relative flex min-h-[100dvh] w-full justify-center">
+      {/* Тихий этнический узор на внешнем тёмном канвасе (desktop). */}
+      <div
+        aria-hidden
+        className="pattern-ethnic-dark pointer-events-none fixed inset-0 hidden opacity-60 sm:block"
+      />
       <div
         className={cn(
           "relative flex w-full max-w-[500px] min-h-[100dvh] flex-col bg-background",
-          "shadow-[0_0_60px_rgba(15,81,50,0.08)]",
+          "sm:ring-1 sm:ring-accent/25",
+          "shadow-[0_0_80px_rgba(0,0,0,0.55)]",
           className,
         )}
       >

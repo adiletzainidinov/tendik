@@ -91,7 +91,7 @@ export function RegistrationForm() {
           {status === "opened" && whatsappUrl && (
             <div
               role="status"
-              className="flex flex-col gap-2 rounded-2xl border border-primary/30 bg-primary-soft px-4 py-3.5 text-[13.5px] leading-relaxed text-primary-dark"
+              className="flex flex-col gap-2 rounded-2xl border border-forest/30 bg-forest-soft px-4 py-3.5 text-[13.5px] leading-relaxed text-forest"
             >
               <p className="font-semibold">
                 WhatsApp ачылды. Даяр билдирүүнү жөнөтүү баскычын басыңыз.
@@ -100,7 +100,7 @@ export function RegistrationForm() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-[13px] font-medium text-primary underline underline-offset-2"
+                className="inline-flex items-center gap-1.5 text-[13px] font-medium text-forest underline underline-offset-2"
               >
                 WhatsApp кайра ачуу
                 <ExternalLink aria-hidden className="h-3.5 w-3.5" />

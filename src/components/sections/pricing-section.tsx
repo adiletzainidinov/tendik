@@ -84,7 +84,7 @@ export function PricingSection() {
         </div>
       )}
 
-      <ol className="mt-4 flex flex-col gap-1.5">
+      <ol className="mt-4 overflow-hidden rounded-2xl border border-border bg-surface shadow-[var(--shadow-soft)]">
         {seatPrices.map(({ seat, priceSom }, index) => {
           const isTaken = index < registered;
           const isCurrent = !groupFull && index === registered;
@@ -92,17 +92,16 @@ export function PricingSection() {
             <li
               key={seat}
               className={cn(
-                "flex min-h-10 items-center justify-between gap-2 rounded-xl border px-3.5 py-2",
-                isCurrent
-                  ? "border-primary/50 bg-primary-soft shadow-[var(--shadow-soft)]"
-                  : "border-border bg-surface",
-                isTaken && "opacity-55",
+                "flex min-h-10 items-center justify-between gap-2 px-3.5 py-2",
+                index > 0 && "border-t border-border/60",
+                isCurrent && "border-l-2 border-l-accent bg-accent-soft/70",
+                isTaken && "opacity-50",
               )}
             >
               <span className="flex min-w-0 items-center gap-2">
                 <span
                   className={cn(
-                    "text-[14px]",
+                    "text-[13.5px]",
                     isCurrent
                       ? "font-semibold text-primary-dark"
                       : "text-text",
@@ -119,7 +118,7 @@ export function PricingSection() {
               </span>
               <span
                 className={cn(
-                  "shrink-0 text-[14px] whitespace-nowrap",
+                  "shrink-0 text-[13.5px] whitespace-nowrap",
                   isCurrent
                     ? "font-semibold text-primary-dark"
                     : isTaken
