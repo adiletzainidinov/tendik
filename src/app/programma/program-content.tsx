@@ -2,6 +2,7 @@ import { CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { Card } from "@/components/ui/card";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { siteConfig } from "@/config/site-config";
 import {
   AGE_ADAPTATIONS,
   ASSESSMENT_CATEGORIES,
@@ -19,6 +20,8 @@ import { ProgramLessonAccordion } from "@/components/programma/program-lesson-ac
 import { ProgramRegistrationCta } from "@/components/programma/program-registration-cta";
 
 export function ProgramContent() {
+  const { courseSchedule } = siteConfig;
+
   return (
     <div className="flex flex-col">
       {/* Objective */}
@@ -75,9 +78,10 @@ export function ProgramContent() {
         aria-labelledby="schedule-structure-title"
       >
         <SectionHeading
-          eyebrow="Бир сабак"
-          title="Окуу күнүнүн түзүлүшү"
+          eyebrow="Бир окуу күнү"
+          title="Сабактын ийкемдүү түзүлүшү"
           titleId="schedule-structure-title"
+          description={`Сабактар ${courseSchedule.startsAfterPrayer} намазынан кийин, саат ${courseSchedule.startTime}дө башталат. Окуучулар ${courseSchedule.dismissalBeforePrayer} намазына ${courseSchedule.dismissalBeforePrayerMinutes} мүнөт калганда үйлөрүнө жөнөтүлөт. Ошондуктан окуу күнү мезгилге жараша болжол менен ${courseSchedule.minDurationHours}–${courseSchedule.maxDurationHours} саатка созулат.`}
         />
         <div className="mt-3 flex flex-col gap-1">
           {LESSON_SCHEDULE.map((item, i) => (
@@ -105,9 +109,16 @@ export function ProgramContent() {
             </div>
           ))}
         </div>
-        <p className="mt-2 text-[12.5px] leading-relaxed text-muted">
-          Этаптардын узактыгы мезгилге жана балдардын жаш курагына жараша
-          ийкемдүү өзгөрөт. Так мүнөттөр белгиленбейт.
+        <p className="mt-2.5 text-[12.5px] leading-relaxed text-muted">
+          Муаллим Сани — окуу күнүнүн негизги багыттарынын бири. Ага бөлүнгөн
+          убакыт окуучулардын деңгээлине жана ошол күндүн жалпы узактыгына жараша
+          аныкталат.
+        </p>
+        <p className="mt-1.5 text-[12.5px] leading-relaxed text-muted">
+          {`Так аяктоо убактысы мезгилге жана ${courseSchedule.dismissalBeforePrayer} намазынын убактысына жараша ата-энелерге алдын ала маалымдалат.`}
+        </p>
+        <p className="mt-1.5 text-[12.5px] leading-relaxed text-muted">
+          Этаптардын узактыгы ийкемдүү өзгөрөт. Так мүнөттөр белгиленбейт.
         </p>
       </section>
 

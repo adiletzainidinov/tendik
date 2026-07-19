@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight, ChevronDown } from "lucide-react";
+import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site-config";
 import { useRegistrationStore } from "@/store/registration-store";
@@ -46,10 +47,13 @@ export function ProgramHero() {
           { value: `${courseSchedule.startTime}дө башталат` },
           { value: `${courseSchedule.minDurationHours}–${courseSchedule.maxDurationHours} сааттык окуу күнү` },
           { value: `${months} айлык программа` },
-        ].map((stat) => (
+        ].map((stat, i, arr) => (
           <div
             key={stat.value}
-            className="rounded-xl border border-border bg-surface px-3 py-2.5 text-center shadow-[var(--shadow-soft)]"
+            className={cn(
+              "rounded-xl border border-border bg-surface px-3 py-2.5 text-center shadow-[var(--shadow-soft)]",
+              i === arr.length - 1 && arr.length % 2 !== 0 && "col-span-2",
+            )}
           >
             <span className="text-[13.5px] font-semibold text-primary-dark">
               {stat.value}
