@@ -4,6 +4,7 @@ import { SiteFooter } from "@/components/layout/site-footer";
 import { StickyRegistrationBar } from "@/components/layout/sticky-registration-bar";
 import { HeroSection } from "@/components/sections/hero-section";
 import { EnrollmentProgressSection } from "@/components/sections/enrollment-progress-section";
+import { PricingSection } from "@/components/sections/pricing-section";
 import { BenefitsSection } from "@/components/sections/benefits-section";
 import { ScheduleSection } from "@/components/sections/schedule-section";
 import { LocationSection } from "@/components/sections/location-section";
@@ -26,6 +27,7 @@ export default function HomePage() {
       <main className="flex flex-col pb-24">
         <HeroSection />
         <EnrollmentProgressSection />
+        <PricingSection />
         <BenefitsSection />
         <ScheduleSection />
         <LocationSection />

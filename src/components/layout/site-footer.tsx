@@ -138,8 +138,8 @@ export function SiteFooter() {
         </div>
 
         <p className="text-[13px] leading-relaxed text-muted">
-          Курс кеминде {siteConfig.minimumStudents} окуучу топтолгондон кийин
-          башталат.
+          Сабактар негизги топко {siteConfig.minimumStudents} бала толук
+          чогулгандан кийин башталат.
         </p>
 
         <div className="flex items-center justify-between border-t border-border pt-4 text-[12px] text-muted">

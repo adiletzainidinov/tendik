@@ -29,7 +29,7 @@ export function EnrollmentProgressSection() {
                 id="enrollment-title"
                 className="text-[17px] font-semibold text-text"
               >
-                Максат: кеминде {min} окуучу
+                Негизги топ: {min} окуучу
               </h2>
             </div>
           </div>
@@ -47,7 +47,7 @@ export function EnrollmentProgressSection() {
             {reached ? (
               <span className="inline-flex items-center gap-1.5 rounded-full bg-primary px-3 py-1.5 text-[12px] font-medium text-white">
                 <CheckCircle2 aria-hidden className="h-3.5 w-3.5" />
-                Максат аткарылды
+                Топ толду
               </span>
             ) : (
               <span className="inline-flex items-center gap-1.5 rounded-full bg-accent-soft px-3 py-1.5 text-[12px] font-medium text-primary-dark">
@@ -66,8 +66,8 @@ export function EnrollmentProgressSection() {
 
           <div className="mt-4 rounded-xl border border-border bg-surface-soft/70 px-3.5 py-3 text-[13px] leading-relaxed text-muted">
             {reached
-              ? "Курс баштоого жетиштүү окуучу топтолду. Уюштуруучу жакында сабактын башталышы жөнүндө кабарлайт."
-              : "Каттоо тизмеси уюштуруучу тарабынан жаңыртылып турат. Сиз балаңызды каттоо аркылуу орун ээлей аласыз."}
+              ? "Негизги топ толду. Сабактын башталышы жөнүндө уюштуруучу кабарлайт."
+              : `Сабактар негизги топко ${min} бала толук чогулгандан кийин башталат. Сабактар башталгандан кийин да курска өзүнчө тарифтер менен кошулууга болот.`}
           </div>
         </div>
       </Card>

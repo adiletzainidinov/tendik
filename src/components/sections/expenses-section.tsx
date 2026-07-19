@@ -1,15 +1,14 @@
 import { FileText } from "lucide-react";
 import { EXPENSES } from "@/data/course-data";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { siteConfig } from "@/config/site-config";
-
-function formatSom(value: number) {
-  return new Intl.NumberFormat("ru-RU").format(value) + " сом";
-}
+import { getMainGroupPriceRange, siteConfig } from "@/config/site-config";
+import { formatSom } from "@/lib/format";
 
 export function ExpensesSection() {
-  const priceLabel = formatSom(siteConfig.priceSom);
-  const periodLabel = siteConfig.paymentPeriodLabel.trim();
+  const { afterLaunch } = siteConfig.pricing;
+  const { minSom, maxSom } = getMainGroupPriceRange();
+  const minPriceLabel = formatSom(minSom);
+  const maxPriceLabel = formatSom(maxSom);
 
   return (
     <section
@@ -27,16 +26,18 @@ export function ExpensesSection() {
         <p className="text-[12px] font-medium tracking-wide text-white/75 uppercase">
           Бир окуучунун катышуу акысы
         </p>
-        <p className="mt-1 flex items-baseline gap-2">
-          <span className="text-[30px] font-semibold leading-none">
-            {priceLabel}
-          </span>
-          {periodLabel.length > 0 && (
-            <span className="text-[13px] text-white/80">{periodLabel}</span>
-          )}
+        <p className="mt-1 text-[24px] font-semibold leading-tight">
+          {minPriceLabel} — {maxPriceLabel}
+        </p>
+        <p className="mt-1 text-[13px] leading-relaxed text-white/85">
+          Алгачкы {siteConfig.minimumStudents} окуучу үчүн баа катталуу
+          кезегине жараша аныкталат.
         </p>
         <p className="mt-3 text-[13px] leading-relaxed text-white/85">
-          Төлөм боюнча кошумча маалымат каттоо учурунда берилет.
+          Негизги топ толгондон кийин: 1 айга{" "}
+          {formatSom(afterLaunch.monthlySom)} же 3 айга алдын ала{" "}
+          {formatSom(afterLaunch.threeMonthsAdvanceSom)}. Төлөм боюнча кошумча
+          маалымат каттоо учурунда берилет.
         </p>
       </div>
 

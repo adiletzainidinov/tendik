@@ -46,9 +46,11 @@ export function HeroSection() {
               className="mt-0.5 h-4 w-4 shrink-0 text-accent"
             />
             <p className="text-[13px] leading-snug text-white/90">
-              Курс{" "}
-              <span className="font-semibold text-white">25 окуучу</span>{" "}
-              топтолгондон кийин башталат
+              Сабактар негизги топ{" "}
+              <span className="font-semibold text-white">
+                ({siteConfig.minimumStudents} окуучу)
+              </span>{" "}
+              толгондон кийин башталат
             </p>
           </div>
         </div>

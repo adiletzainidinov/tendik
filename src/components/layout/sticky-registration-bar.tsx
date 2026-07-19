@@ -3,13 +3,15 @@
 import * as React from "react";
 import { UserPlus2 } from "lucide-react";
 import { cn } from "@/lib/cn";
-import { siteConfig } from "@/config/site-config";
+import { formatSom } from "@/lib/format";
+import { getNextSeatPrice } from "@/config/site-config";
 import { useRegistrationStore } from "@/store/registration-store";
 
 export function StickyRegistrationBar() {
   const open = useRegistrationStore((s) => s.open);
   const isModalOpen = useRegistrationStore((s) => s.isOpen);
   const [visible, setVisible] = React.useState(false);
+  const nextSeat = getNextSeatPrice();
 
   React.useEffect(() => {
     const onScroll = () => {
@@ -50,13 +52,26 @@ export function StickyRegistrationBar() {
           "flex items-center justify-between gap-3 pl-4 pr-2 py-2",
         )}
       >
-        <div className="flex flex-col leading-tight">
-          <span className="text-[12px] font-medium text-primary-dark">
-            Курс баштоо үчүн
-          </span>
-          <span className="text-[13px] text-muted">
-            кеминде {siteConfig.minimumStudents} окуучу керек
-          </span>
+        <div className="flex min-w-0 flex-col leading-tight">
+          {nextSeat ? (
+            <>
+              <span className="text-[12px] font-medium text-primary-dark">
+                Кийинки орун: {nextSeat.seat}-орун
+              </span>
+              <span className="text-[13px] font-semibold whitespace-nowrap text-text">
+                {formatSom(nextSeat.priceSom)}
+              </span>
+            </>
+          ) : (
+            <>
+              <span className="text-[12px] font-medium text-primary-dark">
+                Негизги топ толду
+              </span>
+              <span className="text-[13px] text-muted">
+                Курска кийин да кошулууга болот
+              </span>
+            </>
+          )}
         </div>
         <button
           type="button"

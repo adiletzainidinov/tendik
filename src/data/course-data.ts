@@ -31,6 +31,12 @@ import type {
   MotivationItem,
   ScheduleItem,
 } from "@/types/course";
+import { getMainGroupPriceRange, siteConfig } from "@/config/site-config";
+import { formatSom } from "@/lib/format";
+
+const GROUP_SIZE = siteConfig.minimumStudents;
+const PRICE_RANGE = getMainGroupPriceRange();
+const AFTER_LAUNCH = siteConfig.pricing.afterLaunch;
 
 export const CURRICULUM: readonly CurriculumItem[] = [
   {
@@ -293,8 +299,7 @@ export const FAQ: readonly FaqItem[] = [
   {
     id: "start",
     question: "Окуу качан башталат?",
-    answer:
-      "Кеминде 25 окуучу топтолгондон кийин курс расмий түрдө башталат.",
+    answer: `Алгач ${GROUP_SIZE} баладан турган негизги топ чогултулат. Сабактар негизги топ толук чогулгандан кийин башталат.`,
   },
   {
     id: "days",
@@ -316,8 +321,18 @@ export const FAQ: readonly FaqItem[] = [
   {
     id: "price",
     question: "Катышуу акысы канча?",
+    answer: `Алгачкы ${GROUP_SIZE} окуучу үчүн баа катталуу кезегине жараша аныкталат: баалар ${formatSom(PRICE_RANGE.minSom)}дон башталып, ${formatSom(PRICE_RANGE.maxSom)}го чейин жетет. Негизги топ толгондон кийин тариф — 1 айга ${formatSom(AFTER_LAUNCH.monthlySom)} же 3 айга алдын ала төлөгөндө ${formatSom(AFTER_LAUNCH.threeMonthsAdvanceSom)}.`,
+  },
+  {
+    id: "price-why-different",
+    question: `Эмне үчүн алгачкы ${GROUP_SIZE} орунда баалар ар башка?`,
     answer:
-      "10 000 сом. Төлөм боюнча кошумча маалымат каттоо учурунда берилет.",
+      "Алгачкы катталган ата-энелер топтун толушун жана сабактардын башталышын көбүрөөк күтүшөт, долбоорго биринчилерден болуп ишеним көрсөтүп, курстун башталышына жардам беришет. Ошондуктан эрте катталган орундар арзаныраак.",
+  },
+  {
+    id: "join-after-full",
+    question: "Негизги топ толгондон кийин кошулса болобу?",
+    answer: `Ооба. Сабактар башталгандан кийин 1 айга ${formatSom(AFTER_LAUNCH.monthlySom)} же 3 айга алдын ала ${formatSom(AFTER_LAUNCH.threeMonthsAdvanceSom)} төлөп кошулууга болот.`,
   },
   {
     id: "beginner",
@@ -335,7 +350,7 @@ export const FAQ: readonly FaqItem[] = [
     id: "refund",
     question: "Төлөм кайтарылып бериле турган учурлар барбы?",
     answer:
-      "Ооба. Эгер сабак баштала электе төлөм кылсаңыз, окуу башталганга чейин акчаңыз толугу менен кайтарылат. Эгер сабак башталып, кийин уланта албай калсаңыз, калган мөөнөттүн төлөмүнүн 50% кайтарылат.",
+      "Ооба. Сабактар баштала электе төлөнгөн сумманын 20% кармалып, калган 80% кайтарылат. Сабактар башталгандан кийин окулган убакыт үчүн төлөм кайтарылбайт — калган, пайдаланылбаган мөөнөткө туура келген сумманын 50% гана кайтарылат.",
   },
   {
     id: "report",
