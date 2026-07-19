@@ -9,7 +9,7 @@ import { siteConfig } from "@/config/site-config";
 import { QUICK_CONTACT_URL } from "@/lib/whatsapp";
 import { useRegistrationStore } from "@/store/registration-store";
 import { TundukMark } from "@/components/decor/tunduk-mark";
-import { KyrgyzFlag } from "@/components/decor/kyrgyz-flag";
+import { NationalMotifChip } from "@/components/decor/kyrgyz-flag";
 
 type NavLink = {
   label: string;
@@ -290,9 +290,7 @@ export function NavigationDrawer({
             </div>
 
             <div className="mt-4 flex items-center gap-2.5 border-t border-border/70 pt-3.5">
-              <span className="inline-flex h-[18px] w-[30px] shrink-0 items-center overflow-hidden rounded-[3px] shadow-sm">
-                <KyrgyzFlag decorative />
-              </span>
+              <NationalMotifChip className="h-6 w-6" />
               <span className="text-[11.5px] leading-snug text-muted">
                 Кыргызстандагы балдар үчүн билим берүү демилгеси
               </span>

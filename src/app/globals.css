@@ -20,7 +20,11 @@
   --color-muted: #79695a;
   --color-border: #e9ddc7;
   --color-danger: #b42318;
-  /* Official flag colours — used only inside the flag asset. */
+  /*
+   * Красно-золотая пара для стилизованных национальных мотивов
+   * (NationalMotifChip и т.п.). Не является утверждением официальной
+   * цветовой спецификации государственных символов — см. ATTRIBUTION.md.
+   */
   --color-flag-red: #e8112d;
   --color-flag-gold: #ffdd00;
 

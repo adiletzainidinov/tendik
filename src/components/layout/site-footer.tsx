@@ -9,7 +9,7 @@ import { InstagramIcon } from "@/components/ui/instagram-icon";
 import { siteConfig } from "@/config/site-config";
 import { QUICK_CONTACT_URL } from "@/lib/whatsapp";
 import { TundukMark } from "@/components/decor/tunduk-mark";
-import { KyrgyzFlag } from "@/components/decor/kyrgyz-flag";
+import { NationalMotifChip } from "@/components/decor/kyrgyz-flag";
 import { OrnamentRow } from "@/components/decor/kyrgyz-ornament";
 
 export function SiteFooter() {
@@ -147,16 +147,16 @@ export function SiteFooter() {
         </p>
 
         {/*
-         * Национальный блок. Здесь используется государственный флаг КР.
-         * Место для официального герба Кыргызской Республики подготовлено
-         * ниже: когда появится проверенный официальный SVG-asset, его
-         * следует отрисовать рядом с флагом (компонент с корректным alt).
-         * Приблизительную/самодельную версию герба здесь размещать нельзя.
+         * Национальный блок. Сейчас здесь стилизованный декоративный мотив
+         * түндүк (NationalMotifChip) — официальная государственная символика
+         * не изображается. Когда в public/national-symbols/ появятся
+         * проверенные официальные SVG флага и/или герба КР (порядок описан
+         * в ATTRIBUTION.md), их следует отрисовать в этом блоке через
+         * компонент KyrgyzFlag / аналогичный компонент герба с корректным
+         * alt. Приблизительные/самодельные версии размещать нельзя.
          */}
         <div className="flex items-center gap-3 rounded-2xl border border-white/12 bg-white/[0.05] px-4 py-3">
-          <span className="inline-flex h-[24px] w-[40px] shrink-0 items-center overflow-hidden rounded-[4px] shadow-[0_1px_5px_rgba(0,0,0,0.4)]">
-            <KyrgyzFlag />
-          </span>
+          <NationalMotifChip className="h-8 w-8 rounded-lg" />
           <p className="text-[12px] leading-snug text-white/75">
             Кыргызстандагы балдар үчүн Куран жана адеп боюнча билим берүү
             демилгеси
