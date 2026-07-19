@@ -1,14 +1,16 @@
 "use client";
 
 import * as React from "react";
-import { UserPlus2 } from "lucide-react";
+import Link from "next/link";
+import { Menu } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { siteConfig } from "@/config/site-config";
-import { useRegistrationStore } from "@/store/registration-store";
+import { NavigationDrawer } from "@/components/layout/navigation-drawer";
 
 export function SiteHeader() {
-  const open = useRegistrationStore((s) => s.open);
   const [compact, setCompact] = React.useState(false);
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
+  const menuButtonRef = React.useRef<HTMLButtonElement | null>(null);
 
   React.useEffect(() => {
     const onScroll = () => setCompact(window.scrollY > 24);
@@ -18,53 +20,63 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-30 w-full backdrop-blur-md transition-all duration-300",
-        compact
-          ? "bg-background/85 border-b border-border/70"
-          : "bg-background/60 border-b border-transparent",
-      )}
-    >
-      <div
+    <>
+      <header
         className={cn(
-          "flex items-center justify-between gap-3 px-5",
-          compact ? "py-2.5" : "py-3",
+          "sticky top-0 z-30 w-full backdrop-blur-md transition-all duration-300",
+          compact
+            ? "bg-background/85 border-b border-border/70"
+            : "bg-background/60 border-b border-transparent",
         )}
       >
-        <a
-          href="#top"
-          className="group inline-flex items-center gap-2.5 rounded-xl px-1 py-1 -ml-1"
-          aria-label={`${siteConfig.name} — башкы бет`}
-        >
-          <span
-            aria-hidden
-            className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-white shadow-[var(--shadow-soft)]"
-          >
-            <BrandGlyph />
-          </span>
-          <span className="flex flex-col leading-tight">
-            <span className="text-[15px] font-semibold tracking-[-0.01em] text-text">
-              {siteConfig.name}
-            </span>
-            <span className="text-[11px] text-muted">
-              {siteConfig.tagline}
-            </span>
-          </span>
-        </a>
-        <button
-          type="button"
-          onClick={open}
+        <div
           className={cn(
-            "inline-flex min-h-11 items-center gap-1.5 rounded-full px-3.5 text-[13px] font-medium",
-            "bg-primary text-white shadow-[var(--shadow-soft)] transition-all active:scale-[0.97]",
+            "flex items-center justify-between gap-3 px-5",
+            compact ? "py-2.5" : "py-3",
           )}
         >
-          <UserPlus2 aria-hidden className="h-4 w-4" />
-          <span>Каттоо</span>
-        </button>
-      </div>
-    </header>
+          <Link
+            href="/"
+            className="group inline-flex items-center gap-2.5 rounded-xl px-1 py-1 -ml-1"
+            aria-label={`${siteConfig.name} — башкы бет`}
+          >
+            <span
+              aria-hidden
+              className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-white shadow-[var(--shadow-soft)]"
+            >
+              <BrandGlyph />
+            </span>
+            <span className="flex flex-col leading-tight">
+              <span className="text-[15px] font-semibold tracking-[-0.01em] text-text">
+                {siteConfig.name}
+              </span>
+              <span className="text-[11px] text-muted">
+                {siteConfig.tagline}
+              </span>
+            </span>
+          </Link>
+          <button
+            ref={menuButtonRef}
+            type="button"
+            onClick={() => setDrawerOpen(true)}
+            aria-label="Менюну ачуу"
+            aria-expanded={drawerOpen}
+            aria-controls="navigation-drawer"
+            className={cn(
+              "inline-flex h-11 w-11 items-center justify-center rounded-full",
+              "bg-surface-soft text-primary-dark transition-colors hover:bg-primary-soft active:scale-[0.97]",
+            )}
+          >
+            <Menu aria-hidden className="h-5 w-5" />
+          </button>
+        </div>
+      </header>
+      <NavigationDrawer
+        isOpen={drawerOpen}
+        onClose={() => setDrawerOpen(false)}
+        triggerRef={menuButtonRef}
+      />
+    </>
   );
 }
 
