@@ -44,8 +44,8 @@ export function SiteHeader() {
             <BrandGlyph />
           </span>
           <span className="flex flex-col leading-tight">
-            <span className="text-[15px] font-semibold tracking-[-0.01em] text-text whitespace-nowrap">
-              {siteConfig.name} Мечит
+            <span className="text-[15px] font-semibold tracking-[-0.01em] text-text">
+              {siteConfig.name}
             </span>
             <span className="text-[11px] text-muted">
               {siteConfig.tagline}
