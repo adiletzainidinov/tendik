@@ -2,6 +2,7 @@
 
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/config/site-config";
 import { useRegistrationStore } from "@/store/registration-store";
 
 export function FinalCtaSection() {
@@ -34,8 +35,9 @@ export function FinalCtaSection() {
             Балаңызды Куран үйрөнүүгө каттаңыз
           </h2>
           <p className="max-w-[380px] text-[14px] leading-relaxed text-white/85">
-            Сабактар негизги топко 25 бала толук чогулгандан кийин башталат.
-            Каттоо аркылуу балаңыздын ордун алдын ала белгилеп коюңуз.
+            Сабактар негизги топко {siteConfig.minimumStudents} бала толук
+            чогулгандан кийин башталат. Каттоо аркылуу балаңыздын ордун алдын
+            ала белгилеп коюңуз.
           </p>
           <Button
             variant="primary"

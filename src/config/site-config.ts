@@ -52,7 +52,7 @@ export const siteConfig = {
   metadataDescription:
     "Мечитте ишемби жана жекшемби күндөрү өтүүчү балдар үчүн Куран, тажвид, дуа, даарат жана намаз үйрөтүү курсу.",
 
-  minimumStudents: 25,
+  minimumStudents: MAIN_GROUP_SEAT_PRICES.length,
   registeredStudents: 0,
 
   pricing: {
@@ -91,11 +91,16 @@ export const siteConfig = {
 
 export type SiteConfig = typeof siteConfig;
 
-// The next free seat in the main group, or null once all 25 seats are taken.
+// The next free seat in the main group, or null once all seats are taken.
 // registeredStudents is the single source of truth for how many seats are
 // already occupied.
 export function getNextSeatPrice(): SeatPrice | null {
   return (
     siteConfig.pricing.seatPrices[siteConfig.registeredStudents] ?? null
   );
+}
+
+export function getMainGroupPriceRange(): { minSom: number; maxSom: number } {
+  const values = siteConfig.pricing.seatPrices.map((s) => s.priceSom);
+  return { minSom: Math.min(...values), maxSom: Math.max(...values) };
 }

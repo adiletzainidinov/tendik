@@ -13,7 +13,8 @@ export function PricingSection() {
   const open = useRegistrationStore((s) => s.open);
   const registered = siteConfig.registeredStudents;
   const groupSize = siteConfig.minimumStudents;
-  const { seatPrices, afterLaunch } = siteConfig.pricing;
+  const { seatPrices, afterLaunch, programDurationMonths } =
+    siteConfig.pricing;
   const nextSeat = getNextSeatPrice();
   const groupFull = nextSeat === null;
 
@@ -24,10 +25,10 @@ export function PricingSection() {
       id="pricing"
     >
       <SectionHeading
-        eyebrow="9 айлык программа"
+        eyebrow={`${programDurationMonths} айлык программа`}
         title={`Алгачкы ${groupSize} орун үчүн атайын баалар`}
         titleId="pricing-title"
-        description={`Алгач биз 9 ай бою окуй турган ${groupSize} баладан турган негизги топту чогултабыз. Сабактар негизги топ толук чогулгандан кийин башталат.`}
+        description={`Алгач биз ${programDurationMonths} ай бою окуй турган ${groupSize} баладан турган негизги топту чогултабыз. Сабактар негизги топ толук чогулгандан кийин башталат.`}
       />
 
       <Card tone="soft" className="mt-5">

@@ -1,14 +1,14 @@
 import { FileText } from "lucide-react";
 import { EXPENSES } from "@/data/course-data";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { siteConfig } from "@/config/site-config";
+import { getMainGroupPriceRange, siteConfig } from "@/config/site-config";
 import { formatSom } from "@/lib/format";
 
 export function ExpensesSection() {
-  const { seatPrices, afterLaunch } = siteConfig.pricing;
-  const seatPriceValues = seatPrices.map((s) => s.priceSom);
-  const minPriceLabel = formatSom(Math.min(...seatPriceValues));
-  const maxPriceLabel = formatSom(Math.max(...seatPriceValues));
+  const { afterLaunch } = siteConfig.pricing;
+  const { minSom, maxSom } = getMainGroupPriceRange();
+  const minPriceLabel = formatSom(minSom);
+  const maxPriceLabel = formatSom(maxSom);
 
   return (
     <section

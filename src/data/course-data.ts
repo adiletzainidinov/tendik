@@ -31,6 +31,12 @@ import type {
   MotivationItem,
   ScheduleItem,
 } from "@/types/course";
+import { getMainGroupPriceRange, siteConfig } from "@/config/site-config";
+import { formatSom } from "@/lib/format";
+
+const GROUP_SIZE = siteConfig.minimumStudents;
+const PRICE_RANGE = getMainGroupPriceRange();
+const AFTER_LAUNCH = siteConfig.pricing.afterLaunch;
 
 export const CURRICULUM: readonly CurriculumItem[] = [
   {
@@ -293,8 +299,7 @@ export const FAQ: readonly FaqItem[] = [
   {
     id: "start",
     question: "Окуу качан башталат?",
-    answer:
-      "Алгач 25 баладан турган негизги топ чогултулат. Сабактар негизги топ толук чогулгандан кийин башталат.",
+    answer: `Алгач ${GROUP_SIZE} баладан турган негизги топ чогултулат. Сабактар негизги топ толук чогулгандан кийин башталат.`,
   },
   {
     id: "days",
@@ -316,20 +321,18 @@ export const FAQ: readonly FaqItem[] = [
   {
     id: "price",
     question: "Катышуу акысы канча?",
-    answer:
-      "Алгачкы 25 окуучу үчүн баа катталуу кезегине жараша аныкталат: баалар 5 000 сомдон башталып, 15 000 сомго чейин жетет. Негизги топ толгондон кийин тариф — 1 айга 2 500 сом же 3 айга алдын ала төлөгөндө 6 000 сом.",
+    answer: `Алгачкы ${GROUP_SIZE} окуучу үчүн баа катталуу кезегине жараша аныкталат: баалар ${formatSom(PRICE_RANGE.minSom)}дон башталып, ${formatSom(PRICE_RANGE.maxSom)}го чейин жетет. Негизги топ толгондон кийин тариф — 1 айга ${formatSom(AFTER_LAUNCH.monthlySom)} же 3 айга алдын ала төлөгөндө ${formatSom(AFTER_LAUNCH.threeMonthsAdvanceSom)}.`,
   },
   {
     id: "price-why-different",
-    question: "Эмне үчүн алгачкы 25 орунда баалар ар башка?",
+    question: `Эмне үчүн алгачкы ${GROUP_SIZE} орунда баалар ар башка?`,
     answer:
       "Алгачкы катталган ата-энелер топтун толушун жана сабактардын башталышын көбүрөөк күтүшөт, долбоорго биринчилерден болуп ишеним көрсөтүп, курстун башталышына жардам беришет. Ошондуктан эрте катталган орундар арзаныраак.",
   },
   {
     id: "join-after-full",
     question: "Негизги топ толгондон кийин кошулса болобу?",
-    answer:
-      "Ооба. Сабактар башталгандан кийин 1 айга 2 500 сом же 3 айга алдын ала 6 000 сом төлөп кошулууга болот.",
+    answer: `Ооба. Сабактар башталгандан кийин 1 айга ${formatSom(AFTER_LAUNCH.monthlySom)} же 3 айга алдын ала ${formatSom(AFTER_LAUNCH.threeMonthsAdvanceSom)} төлөп кошулууга болот.`,
   },
   {
     id: "beginner",

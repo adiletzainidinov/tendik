@@ -47,7 +47,9 @@ export function HeroSection() {
             />
             <p className="text-[13px] leading-snug text-white/90">
               Сабактар негизги топ{" "}
-              <span className="font-semibold text-white">(25 окуучу)</span>{" "}
+              <span className="font-semibold text-white">
+                ({siteConfig.minimumStudents} окуучу)
+              </span>{" "}
               толгондон кийин башталат
             </p>
           </div>
