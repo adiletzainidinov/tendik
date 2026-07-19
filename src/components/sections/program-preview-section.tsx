@@ -2,6 +2,7 @@ import Link from "next/link";
 import {
   BookOpenText,
   ChevronRight,
+  Clock,
   Droplets,
   GraduationCap,
   HandHeart,
@@ -23,6 +24,7 @@ const DIRECTIONS = [
 
 export function ProgramPreviewSection() {
   const months = siteConfig.pricing.programDurationMonths;
+  const { courseSchedule } = siteConfig;
 
   return (
     <section
@@ -45,7 +47,8 @@ export function ProgramPreviewSection() {
         {[
           { value: "80 сабак", icon: ListChecks },
           { value: `${months} ай`, icon: MoonStar },
-          { value: "6 сааттык сабак", icon: BookOpenText },
+          { value: `${courseSchedule.startTime}дө башталат`, icon: Clock },
+          { value: `${courseSchedule.minDurationHours}–${courseSchedule.maxDurationHours} саат`, icon: BookOpenText },
           { value: "Жаш куракка ылайык", icon: Users },
         ].map((stat) => (
           <div
@@ -61,6 +64,10 @@ export function ProgramPreviewSection() {
           </div>
         ))}
       </div>
+
+      <p className="mt-2 text-[12.5px] leading-relaxed text-muted">
+        {`Сабактар ${courseSchedule.startsAfterPrayer} намазынан кийин башталып, ${courseSchedule.dismissalBeforePrayer} намазына ${courseSchedule.dismissalBeforePrayerMinutes} мүнөт калганда аяктайт.`}
+      </p>
 
       <div className="mt-4 flex flex-col gap-1.5">
         {DIRECTIONS.map(({ label, icon: Icon }) => (

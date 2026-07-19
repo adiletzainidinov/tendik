@@ -23,7 +23,6 @@ export const PROGRAM_OBJECTIVES: readonly ProgramObjective[] = [
 
 export const LESSON_SCHEDULE: readonly LessonScheduleItem[] = [
   {
-    time: "00:00–00:20",
     title: "Сабакты ачуу",
     details: [
       "Саламдашуу",
@@ -32,15 +31,16 @@ export const LESSON_SCHEDULE: readonly LessonScheduleItem[] = [
       "Бүгүнкү максатты түшүндүрүү",
     ],
   },
-  { time: "00:20–00:50", title: "Муаллим Сани, 1-бөлүк" },
-  { time: "00:50–01:00", title: "Тыныгуу" },
-  { time: "01:00–01:30", title: "Муаллим Сани, 2-бөлүк" },
-  { time: "01:30–01:40", title: "Кыймылдуу тыныгуу" },
-  { time: "01:40–02:10", title: "Муаллим Сани, 3-бөлүк" },
-  { time: "02:10–02:20", title: "Тыныгуу" },
-  { time: "02:20–02:50", title: "Муаллим Сани, 4-бөлүк" },
   {
-    time: "02:50–03:20",
+    title: "Муаллим Сани",
+    details: [
+      "Окуучунун жеке деңгээлине жараша окуу",
+      "Араб тамгаларын туура айтуу",
+      "Окуу жана кайталоо",
+      "Кыска тыныгуулар менен иштөө",
+    ],
+  },
+  {
     title: "Дуба жана зикир",
     details: [
       "Жаңы дуба",
@@ -49,9 +49,16 @@ export const LESSON_SCHEDULE: readonly LessonScheduleItem[] = [
       "Мурунку дубаларды кайталоо",
     ],
   },
-  { time: "03:20–03:50", title: "Тамактануу жана эс алуу" },
   {
-    time: "03:50–04:35",
+    title: "Тыныгуу, тамактануу жана эс алуу",
+    details: [
+      "Жаш куракка ылайык эс алуу",
+      "Кыймылдуу тыныгуу",
+      "Тамактануу",
+      "Сабакка кайра даярдануу",
+    ],
+  },
+  {
     title: "Намаз жана даарат",
     details: [
       "Түшүндүрүү",
@@ -60,7 +67,6 @@ export const LESSON_SCHEDULE: readonly LessonScheduleItem[] = [
     ],
   },
   {
-    time: "04:35–05:15",
     title: "Исламдын негиздери",
     details: [
       "Акыйда",
@@ -70,7 +76,6 @@ export const LESSON_SCHEDULE: readonly LessonScheduleItem[] = [
     ],
   },
   {
-    time: "05:15–05:45",
     title: "Сира жана адеп-ахлак",
     details: [
       "Пайгамбарлардын окуялары",
@@ -80,7 +85,6 @@ export const LESSON_SCHEDULE: readonly LessonScheduleItem[] = [
     ],
   },
   {
-    time: "05:45–06:00",
     title: "Жыйынтык",
     details: [
       "Суроо-жооп",
@@ -1121,7 +1125,7 @@ export const AGE_ADAPTATIONS: readonly AgeAdaptation[] = [
   {
     id: "age-2-6",
     ageRange: "2–6 жаш",
-    note: "Бул куракта алты саат бою отуруп окууга болбойт.",
+    note: "Бул курактагы балдар узак убакыт бою отуруп окубайт. Сабак кыймыл, оюн жана эс алуу менен кезектешет.",
     points: [
       "Бир иш-аракет 10–15 мүнөттөн ашпасын",
       "Кыймылдуу оюн көп болсун",

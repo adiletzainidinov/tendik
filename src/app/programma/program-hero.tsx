@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight, ChevronDown } from "lucide-react";
+import { cn } from "@/lib/cn";
 import { Button } from "@/components/ui/button";
 import { siteConfig } from "@/config/site-config";
 import { useRegistrationStore } from "@/store/registration-store";
@@ -8,6 +9,7 @@ import { useRegistrationStore } from "@/store/registration-store";
 export function ProgramHero() {
   const open = useRegistrationStore((s) => s.open);
   const months = siteConfig.pricing.programDurationMonths;
+  const { courseSchedule } = siteConfig;
 
   const scrollToLessons = () => {
     const el = document.getElementById("lessons");
@@ -42,12 +44,16 @@ export function ProgramHero() {
         {[
           { value: "80 сабак" },
           { value: "8 негизги бөлүм" },
-          { value: "6 сааттык сабак" },
+          { value: `${courseSchedule.startTime}дө башталат` },
+          { value: `${courseSchedule.minDurationHours}–${courseSchedule.maxDurationHours} сааттык окуу күнү` },
           { value: `${months} айлык программа` },
-        ].map((stat) => (
+        ].map((stat, i, arr) => (
           <div
             key={stat.value}
-            className="rounded-xl border border-border bg-surface px-3 py-2.5 text-center shadow-[var(--shadow-soft)]"
+            className={cn(
+              "rounded-xl border border-border bg-surface px-3 py-2.5 text-center shadow-[var(--shadow-soft)]",
+              i === arr.length - 1 && arr.length % 2 !== 0 && "col-span-2",
+            )}
           >
             <span className="text-[13.5px] font-semibold text-primary-dark">
               {stat.value}
@@ -55,6 +61,10 @@ export function ProgramHero() {
           </div>
         ))}
       </div>
+
+      <p className="mt-3 rounded-xl bg-surface-soft/70 px-3.5 py-2.5 text-[13px] leading-relaxed text-muted">
+        {`Сабактар ${courseSchedule.startsAfterPrayer} намазынан кийин башталып, ${courseSchedule.dismissalBeforePrayer} намазына ${courseSchedule.dismissalBeforePrayerMinutes} мүнөт калганда аяктайт. Мезгилге жараша ${courseSchedule.minDurationHours}–${courseSchedule.maxDurationHours} саат созулат.`}
+      </p>
 
       <div className="mt-5 flex flex-col gap-2.5">
         <Button variant="primary" size="lg" onClick={open} fullWidth>

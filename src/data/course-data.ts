@@ -37,6 +37,8 @@ import { formatSom } from "@/lib/format";
 const GROUP_SIZE = siteConfig.minimumStudents;
 const PRICE_RANGE = getMainGroupPriceRange();
 const AFTER_LAUNCH = siteConfig.pricing.afterLaunch;
+const COURSE_DAYS = siteConfig.courseDays;
+const COURSE_SCHEDULE = siteConfig.courseSchedule;
 
 export const CURRICULUM: readonly CurriculumItem[] = [
   {
@@ -168,21 +170,28 @@ export const BENEFITS: readonly BenefitItem[] = [
 export const SCHEDULE: readonly ScheduleItem[] = [
   {
     id: "days",
-    title: "Ишемби жана жекшемби",
-    description: "Дем алыш күндөрү мечитте өтөт.",
+    title: `${COURSE_DAYS[0]} жана ${COURSE_DAYS[1]?.toLowerCase()}`,
+    description: "Сабактар дем алыш күндөрү мечитте өтөт.",
     icon: CalendarDays,
   },
   {
-    id: "main",
-    title: "Бешимден Асрга чейин",
-    description: "Негизги Куран сабагы.",
+    id: "start",
+    title: `Башталышы — ${COURSE_SCHEDULE.startTime}`,
+    description: `Сабактар ${COURSE_SCHEDULE.startsAfterPrayer} намазынан кийин башталат.`,
     icon: Sun,
   },
   {
-    id: "extra",
-    title: "Асрдан кийин 1 саат",
-    description: "Дуа, даарат, намаз жана тарбиялык сабак.",
+    id: "end",
+    title: `${COURSE_SCHEDULE.dismissalBeforePrayer} намазына ${COURSE_SCHEDULE.dismissalBeforePrayerMinutes} мүнөт калганда`,
+    description:
+      "Окуучулар караңгы киргенге чейин үйүнө жетип алуусу үчүн алдын ала чыгарылат.",
     icon: MoonStar,
+  },
+  {
+    id: "duration",
+    title: `${COURSE_SCHEDULE.minDurationHours}–${COURSE_SCHEDULE.maxDurationHours} саат`,
+    description: `Аяктоо убактысы мезгилге жараша өзгөрөт. Жайында сабак ${COURSE_SCHEDULE.summerApproximateEndTime} чамасына чейин созулушу мүмкүн.`,
+    icon: Sun,
   },
 ];
 
@@ -321,8 +330,7 @@ export const FAQ: readonly FaqItem[] = [
   {
     id: "duration",
     question: "Сабак канча убакытка созулат?",
-    answer:
-      "Негизги сабак Бешим намазынан Аср намазына чейин. Асрдан кийин дагы 1 саат кошумча сабак өтөт.",
+    answer: `Сабак ${COURSE_SCHEDULE.startsAfterPrayer} намазынан кийин, саат ${COURSE_SCHEDULE.startTime}дө башталат. Окуучулар ${COURSE_SCHEDULE.dismissalBeforePrayer} намазына ${COURSE_SCHEDULE.dismissalBeforePrayerMinutes} мүнөт калганда үйлөрүнө жөнөтүлөт. Окуу күнү мезгилге жараша болжол менен ${COURSE_SCHEDULE.minDurationHours}–${COURSE_SCHEDULE.maxDurationHours} саатка созулат. Так аяктоо убактысы ата-энелерге алдын ала маалымдалат. Жайында сабак ${COURSE_SCHEDULE.summerApproximateEndTime} чамасына чейин созулушу мүмкүн.`,
   },
   {
     id: "what",
