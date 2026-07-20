@@ -12,8 +12,18 @@ type SitePageShellProps = {
 export function SitePageShell({ children, mainClassName }: SitePageShellProps) {
   return (
     <MobileShell>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-3 focus:top-3 focus:z-50 focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-[14px] focus:font-medium focus:text-white focus:shadow-[var(--shadow-elevated)]"
+      >
+        Негизги мазмунга өтүү
+      </a>
       <SiteHeader />
-      <main className={mainClassName ?? "flex flex-col pb-24"}>
+      <main
+        id="main-content"
+        tabIndex={-1}
+        className={mainClassName ?? "flex flex-col pb-24"}
+      >
         {children}
       </main>
       <SiteFooter />

@@ -45,10 +45,16 @@ export function RegistrationForm() {
     const nextErrors = validate(draft);
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0) {
-      const firstErrorField = document.querySelector<HTMLElement>(
-        "[data-has-error='true']",
-      );
-      firstErrorField?.focus();
+      // Фокусируем первое поле с ошибкой по его id, внутри текущей формы.
+      // Раньше искали по `[data-has-error='true']` сразу после setErrors —
+      // но этот атрибут выставляется только на следующем рендере, поэтому
+      // фокус не срабатывал. Ключи ошибок совпадают с id полей.
+      const firstErrorId = Object.keys(nextErrors)[0];
+      if (firstErrorId) {
+        e.currentTarget
+          .querySelector<HTMLElement>(`[id="${firstErrorId}"]`)
+          ?.focus();
+      }
       return;
     }
     const message = buildRegistrationMessage(draft);

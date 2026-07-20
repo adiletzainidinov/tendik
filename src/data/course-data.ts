@@ -43,7 +43,7 @@ const COURSE_SCHEDULE = siteConfig.courseSchedule;
 export const CURRICULUM: readonly CurriculumItem[] = [
   {
     id: "muallim-saani",
-    title: "Муаллим Саани",
+    title: "Муаллим Сани",
     description: "Куран окууга даярдоо баскычы.",
     points: [
       "Араб тамгаларын үйрөнүү",
@@ -203,7 +203,7 @@ export const LEARNING_PATH: readonly LearningStep[] = [
   },
   {
     id: "muallim",
-    title: "Муаллим Саани",
+    title: "Муаллим Сани",
     description: "Куран окууга негиз бекитебиз.",
   },
   {
@@ -336,7 +336,7 @@ export const FAQ: readonly FaqItem[] = [
     id: "what",
     question: "Балдар эмнелерди үйрөнүшөт?",
     answer:
-      "Муаллим Саани, Куран окуу, тажвид, Куран жаттоо, дуалар, даарат жана намаз үйрөтүлөт.",
+      "Муаллим Сани, Куран окуу, тажвид, Куран жаттоо, дуалар, даарат жана намаз үйрөтүлөт.",
   },
   {
     id: "price",

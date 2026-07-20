@@ -8,6 +8,12 @@ type SectionHeadingProps = {
   description?: string;
   className?: string;
   align?: "left" | "center";
+  /**
+   * Уровень заголовка. По умолчанию h2 (секция внутри страницы). Для
+   * главного заголовка страницы, где ещё нет h1, передайте "h1", чтобы
+   * сохранить корректную иерархию заголовков. Визуальный стиль не меняется.
+   */
+  as?: "h1" | "h2";
 };
 
 export function SectionHeading({
@@ -17,6 +23,7 @@ export function SectionHeading({
   description,
   className,
   align = "left",
+  as: Heading = "h2",
 }: SectionHeadingProps) {
   return (
     <header
@@ -38,12 +45,12 @@ export function SectionHeading({
           {eyebrow}
         </span>
       )}
-      <h2
+      <Heading
         id={titleId}
         className="text-[22px] leading-[1.22] font-semibold text-text sm:text-[24px]"
       >
         {title}
-      </h2>
+      </Heading>
       {description && (
         <p className="text-[14.5px] leading-relaxed text-muted">{description}</p>
       )}
