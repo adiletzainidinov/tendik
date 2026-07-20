@@ -2,29 +2,51 @@
 
 @theme {
   /*
-   * "Кыргызская национальная идентичность в современной цифровой форме".
-   * Deep kyrgyz crimson + warm gold + ivory/sand neutrals, with a muted
-   * forest green reserved for the Islamic educational context.
+   * «Кыргызская традиция, переосмысленная как современный цифровой
+   * образовательный продукт». Палитра вдохновлена шырдаком и войлоком:
+   * глубокий кыргызский кызыл, тёплое золото, терракота (кереге/глина),
+   * молочный войлок и песок, с приглушённым зелёным для исламского
+   * контекста.
    */
-  --color-background: #faf6ec;
-  --color-surface: #fffdf6;
-  --color-surface-soft: #f4edde;
+  --color-background: #f7f0e1;
+  --color-surface: #fffdf7;
+  --color-surface-soft: #f1e8d6;
+
   --color-primary: #9e1b32;
   --color-primary-dark: #6f1223;
-  --color-primary-soft: #f9e8e6;
+  --color-primary-deep: #4a0c18;
+  --color-primary-soft: #f7e6e4;
+
   --color-accent: #c6952f;
-  --color-accent-soft: #f7ecd0;
+  --color-accent-soft: #f6ead0;
+
+  /* Терракота/глина — тёплый третий цвет из шырдака, уводит от
+     ощущения «только бордовый + золото». */
+  --color-clay: #b1502f;
+  --color-clay-soft: #f2ddd0;
+
+  /* Войлок и шерсть — материальные нейтрали. */
+  --color-felt: #efe3cd;
+  --color-felt-dark: #2c1a14;
+  --color-wool: #f3ead8;
+  --color-sand: #e7d9bd;
+  --color-ivory: #fbf7ee;
+
   --color-forest: #1e6b4e;
-  --color-forest-soft: #e7f0e9;
+  --color-forest-soft: #e5efe7;
+
   --color-text: #241b15;
-  --color-muted: #79695a;
-  --color-border: #e9ddc7;
+  --color-muted: #7a6a5a;
+  --color-border: #e6d8bf;
   --color-danger: #b42318;
-  /*
-   * Красно-золотая пара для стилизованных национальных мотивов
-   * (NationalMotifChip и т.п.). Декоративная палитра; официальную
-   * цветовую спецификацию госсимволов не утверждает — см. ATTRIBUTION.md.
-   */
+
+  /* Орнаментальные цвета для мотивов кочкор мүйүз / шырдак. */
+  --color-ornament-red: #b8253b;
+  --color-ornament-gold: #d3a23c;
+  --color-ornament-dark: #3a0f18;
+
+  /* Красно-золотая пара стилизованных национальных мотивов (не
+     официальная госсимволика — см. ATTRIBUTION.md). */
   --color-national-red: #e8112d;
   --color-national-gold: #ffdd00;
 
@@ -67,17 +89,25 @@
 
   body {
     font-family: var(--font-sans);
-    /* Premium outer canvas around the mobile shell on wide screens. */
-    background-color: #1a1210;
+    /*
+     * Внешний канвас вокруг mobile shell на широких экранах: глубокий
+     * войлочно-бордовый фон с тёплым золотым и терракотовым свечением.
+     */
+    background-color: #1c1310;
     background-image:
       radial-gradient(
-        90% 60% at 50% -10%,
-        rgba(158, 27, 50, 0.32) 0%,
+        80% 55% at 50% -8%,
+        rgba(158, 27, 50, 0.34) 0%,
         rgba(158, 27, 50, 0) 60%
       ),
       radial-gradient(
-        70% 50% at 50% 110%,
-        rgba(198, 149, 47, 0.12) 0%,
+        60% 45% at 12% 40%,
+        rgba(177, 80, 47, 0.16) 0%,
+        rgba(177, 80, 47, 0) 55%
+      ),
+      radial-gradient(
+        60% 50% at 88% 75%,
+        rgba(198, 149, 47, 0.14) 0%,
         rgba(198, 149, 47, 0) 55%
       );
     background-attachment: fixed;
@@ -120,7 +150,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-primary);
+    outline: 2px solid var(--color-accent);
     outline-offset: 2px;
     border-radius: 6px;
   }
@@ -136,44 +166,128 @@
     scroll-margin-top: 4rem;
   }
 
-  /* Deep crimson hero canvas with a warm gold aura. */
+  /* ————————————————————————————————————————————————
+     ПОВЕРХНОСТИ (surface styles)
+     ———————————————————————————————————————————————— */
+
+  /* Тёплая войлочная светлая поверхность. */
+  .surface-felt {
+    background:
+      linear-gradient(180deg, var(--color-wool) 0%, var(--color-felt) 100%);
+  }
+
+  /* Глубокая этническая поверхность (hero). */
+  .surface-hero {
+    background:
+      radial-gradient(
+        120% 78% at 50% -18%,
+        rgba(255, 221, 0, 0.13) 0%,
+        rgba(255, 221, 0, 0) 52%
+      ),
+      radial-gradient(
+        90% 60% at 14% 8%,
+        rgba(177, 80, 47, 0.34) 0%,
+        rgba(177, 80, 47, 0) 55%
+      ),
+      linear-gradient(168deg, #7c1327 0%, #9e1b32 46%, #560d1c 100%);
+  }
+
+  /* Глубокая бордовая поверхность (final CTA, footer, drawer). */
+  .surface-deep {
+    background:
+      radial-gradient(
+        120% 90% at 85% -20%,
+        rgba(198, 149, 47, 0.22) 0%,
+        rgba(198, 149, 47, 0) 55%
+      ),
+      radial-gradient(
+        80% 60% at 10% 110%,
+        rgba(177, 80, 47, 0.28) 0%,
+        rgba(177, 80, 47, 0) 55%
+      ),
+      linear-gradient(180deg, #5f101f 0%, #3f0a15 100%);
+  }
+
+  /* Поверхность программы — тёплая, чуть темнее фона. */
+  .surface-program {
+    background:
+      linear-gradient(180deg, var(--color-felt) 0%, var(--color-sand) 100%);
+  }
+
+  /* Legacy-совместимость: старые классы указывают на новые поверхности. */
   .decor-hero {
     background:
       radial-gradient(
-        130% 80% at 50% -20%,
-        rgba(255, 221, 0, 0.14) 0%,
-        rgba(255, 221, 0, 0) 55%
+        120% 78% at 50% -18%,
+        rgba(255, 221, 0, 0.13) 0%,
+        rgba(255, 221, 0, 0) 52%
       ),
-      linear-gradient(168deg, #7c1327 0%, #9e1b32 46%, #5c0f1e 100%);
+      radial-gradient(
+        90% 60% at 14% 8%,
+        rgba(177, 80, 47, 0.34) 0%,
+        rgba(177, 80, 47, 0) 55%
+      ),
+      linear-gradient(168deg, #7c1327 0%, #9e1b32 46%, #560d1c 100%);
   }
-
-  /* Deep bordeaux canvas for the final CTA and footer. */
   .decor-deep {
     background:
       radial-gradient(
         120% 90% at 85% -20%,
-        rgba(198, 149, 47, 0.2) 0%,
+        rgba(198, 149, 47, 0.22) 0%,
         rgba(198, 149, 47, 0) 55%
       ),
-      linear-gradient(180deg, #5f101f 0%, #480c18 100%);
+      linear-gradient(180deg, #5f101f 0%, #3f0a15 100%);
   }
 
+  /* ————————————————————————————————————————————————
+     ТЕКСТУРЫ (материальность войлока/шерсти)
+     ———————————————————————————————————————————————— */
+
   /*
-   * Subtle kyrgyz "кочкор мүйүз" (ram-horn) tile — gold, for dark surfaces.
-   * Kept extremely quiet so it never competes with text.
+   * Тонкая войлочная зернистость. Слой всегда сидит ПОД контентом:
+   * isolation создаёт локальный контекст наложения, а z-index:-1 у
+   * псевдоэлемента кладёт зерно между фоном поверхности и её содержимым.
+   * Так текстура не снижает контраст текста.
    */
+  .texture-felt {
+    position: relative;
+    isolation: isolate;
+  }
+  .texture-felt::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.5;
+    mix-blend-mode: soft-light;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E");
+    background-size: 140px 140px;
+  }
+
+  /* ————————————————————————————————————————————————
+     ПАТТЕРНЫ
+     ———————————————————————————————————————————————— */
+
+  /* Кочкор мүйүз (бараньи рога), золото — для тёмных поверхностей. */
   .pattern-ethnic-dark {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23ffdd00' stroke-opacity='0.16' stroke-width='1.2'%3E%3Cpath d='M28 14c7 0 12 5 12 11 0 4.4-3 7-6.4 7-2.8 0-4.6-1.8-4.6-4.2 0-2 1.4-3.4 3.2-3.4'/%3E%3Cpath d='M28 14c-7 0-12 5-12 11 0 4.4 3 7 6.4 7 2.8 0 4.6-1.8 4.6-4.2 0-2-1.4-3.4-3.2-3.4'/%3E%3Cpath d='M28 44v-8'/%3E%3C/g%3E%3C/svg%3E");
     background-size: 56px 56px;
   }
 
-  /* Same motif in crimson for light ivory surfaces. */
+  /* Тот же мотив в кызыл — для светлых войлочных поверхностей. */
   .pattern-ethnic-light {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%239e1b32' stroke-opacity='0.07' stroke-width='1.2'%3E%3Cpath d='M28 14c7 0 12 5 12 11 0 4.4-3 7-6.4 7-2.8 0-4.6-1.8-4.6-4.2 0-2 1.4-3.4 3.2-3.4'/%3E%3Cpath d='M28 14c-7 0-12 5-12 11 0 4.4 3 7 6.4 7 2.8 0 4.6-1.8 4.6-4.2 0-2-1.4-3.4-3.2-3.4'/%3E%3Cpath d='M28 44v-8'/%3E%3C/g%3E%3C/svg%3E");
     background-size: 56px 56px;
   }
 
-  /* Fine dotted texture for deep surfaces. */
+  /* Решётка кереге (стена боз үй): диагональная сетка. Для десктоп-фона. */
+  .pattern-kerege {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'%3E%3Cg fill='none' stroke='%23d3a23c' stroke-opacity='0.5' stroke-width='1'%3E%3Cpath d='M0 22L22 0l22 22-22 22z'/%3E%3Cpath d='M22 0v44M0 22h44'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 44px 44px;
+  }
+
+  /* Тонкая золотая пунктирная текстура. */
   .pattern-dots {
     background-image: radial-gradient(
       rgba(255, 221, 0, 0.14) 1px,
@@ -182,10 +296,25 @@
     background-size: 14px 14px;
   }
 
-  /* Thin double gold frame used on premium blocks. */
+  /* ————————————————————————————————————————————————
+     РАМКИ / КРОМКИ
+     ———————————————————————————————————————————————— */
+
+  /* Двойная золотая рамка для премиальных блоков. */
   .frame-gold {
     border: 1px solid rgba(198, 149, 47, 0.45);
     box-shadow: inset 0 0 0 3px rgba(198, 149, 47, 0.12);
+  }
+
+  /* Верхняя золотая нить-кромка (для карточек с характером). */
+  .edge-gold-top {
+    background-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--color-accent) 18%,
+      var(--color-accent) 82%,
+      transparent 100%
+    );
   }
 }
 
@@ -195,6 +324,17 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -245,6 +385,10 @@
 
 .animate-fade-in {
   animation: fade-in 0.4s ease-out both;
+}
+
+.animate-rise-in {
+  animation: rise-in 0.5s cubic-bezier(0.22, 0.7, 0.3, 1) both;
 }
 
 .animate-slide-up {

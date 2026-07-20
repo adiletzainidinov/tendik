@@ -6,7 +6,8 @@ import { siteConfig } from "@/config/site-config";
 import { useRegistrationStore } from "@/store/registration-store";
 import { TundukMark } from "@/components/decor/tunduk-mark";
 import { NationalBadge } from "@/components/decor/national-motif";
-import { AlaTooSilhouette } from "@/components/decor/ala-too-silhouette";
+import { MountainRange } from "@/components/decor/mountain-range";
+import { EthnicTexture } from "@/components/decor/ethnic-texture";
 import { OrnamentRow } from "@/components/decor/kyrgyz-ornament";
 
 export function HeroSection() {
@@ -23,7 +24,7 @@ export function HeroSection() {
       aria-labelledby="hero-title"
       className="relative overflow-hidden"
     >
-      <div className="decor-hero relative px-5 pt-4 pb-20">
+      <div className="surface-hero texture-felt relative px-5 pt-4 pb-24">
         <HeroDecor />
 
         <div className="relative z-10 flex flex-col gap-4 text-white">
@@ -98,12 +99,12 @@ export function HeroSection() {
           </Button>
         </div>
 
-        {/* Силуэт Ала-Тоо у нижней кромки hero */}
+        {/* Средний слой глубины: горы Ала-Тоо со снежными вершинами */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 bottom-0 text-[#43091a]"
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-0 text-[#450a1b]"
         >
-          <AlaTooSilhouette className="h-16 w-full" />
+          <MountainRange className="h-24" />
         </div>
       </div>
 
@@ -118,15 +119,23 @@ export function HeroSection() {
 function HeroDecor() {
   return (
     <>
-      {/* Большой золотой түндүк с 40 лучами — главный декоративный мотив */}
+      {/* Задний слой: решётка кереге */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-14 right-[-70px] text-accent opacity-[0.22]"
+        className="pattern-kerege pointer-events-none absolute inset-0 opacity-[0.08]"
+      />
+      {/* Орнаментальный мотив кочкор мүйүз */}
+      <EthnicTexture variant="ornament-dark" opacityClassName="opacity-35" />
+
+      {/* Большой золотой түндүк с 40 лучами — главный декоративный акцент */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-16 right-[-72px] z-0 text-accent opacity-[0.24]"
       >
         <div className="animate-float-slow">
           <svg
             viewBox="0 0 240 240"
-            className="h-[260px] w-[260px]"
+            className="h-[280px] w-[280px]"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -135,7 +144,7 @@ function HeroDecor() {
                 <line
                   key={i}
                   x1="120"
-                  y1="14"
+                  y1="12"
                   x2="120"
                   y2="34"
                   strokeWidth="2.4"
@@ -143,12 +152,8 @@ function HeroDecor() {
                 />
               ))}
             </g>
-            <circle cx="120" cy="120" r="72" stroke="currentColor" strokeWidth="2" />
-            <g
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-            >
+            <circle cx="120" cy="120" r="74" stroke="currentColor" strokeWidth="2" />
+            <g stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
               <path d="M52 120c20-18 116-18 136 0" />
               <path d="M60 94c24-13 96-13 120 0" />
               <path d="M60 146c24 13 96 13 120 0" />
@@ -159,17 +164,14 @@ function HeroDecor() {
           </svg>
         </div>
       </div>
-      <div
-        aria-hidden
-        className="pattern-ethnic-dark pointer-events-none absolute inset-0 opacity-40"
-      />
+
       <div
         aria-hidden
         className="pointer-events-none absolute -left-20 -top-14 h-56 w-56 rounded-full bg-[#ffdd00]/10 blur-3xl"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-10 bottom-10 h-48 w-48 rounded-full bg-black/25 blur-3xl"
+        className="pointer-events-none absolute -right-10 bottom-16 h-48 w-48 rounded-full bg-black/25 blur-3xl"
       />
     </>
   );

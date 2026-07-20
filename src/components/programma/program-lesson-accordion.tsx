@@ -59,10 +59,10 @@ export function ProgramLessonAccordion({
               >
                 <span
                   className={cn(
-                    "inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-lg text-[11.5px] font-bold transition-colors",
+                    "inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-[11.5px] font-bold transition-colors",
                     isOpen
-                      ? "bg-primary text-white"
-                      : "bg-primary-soft text-primary-dark",
+                      ? "border-accent bg-primary text-accent"
+                      : "border-accent/40 bg-primary-soft text-primary-dark",
                   )}
                 >
                   {lesson.number}

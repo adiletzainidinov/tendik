@@ -11,6 +11,7 @@ import { QUICK_CONTACT_URL } from "@/lib/whatsapp";
 import { TundukMark } from "@/components/decor/tunduk-mark";
 import { NationalMotifChip } from "@/components/decor/national-motif";
 import { OrnamentRow } from "@/components/decor/kyrgyz-ornament";
+import { MountainRange } from "@/components/decor/mountain-range";
 
 export function SiteFooter() {
   const year = new Date().getFullYear();
@@ -25,16 +26,23 @@ export function SiteFooter() {
     "hover:bg-white/[0.12]";
 
   return (
-    <footer className="decor-deep relative mt-10 overflow-hidden text-white">
+    <footer className="surface-deep texture-felt relative mt-10 overflow-hidden text-white">
       <div
         aria-hidden
-        className="pattern-ethnic-dark pointer-events-none absolute inset-0 opacity-35"
+        className="pattern-ethnic-dark pointer-events-none absolute inset-0 z-0 opacity-35"
       />
-      <div aria-hidden className="relative text-accent/70">
+      <div aria-hidden className="relative z-10 text-accent/70">
         <OrnamentRow patternId="footer-ornament" className="h-2.5" />
       </div>
+      {/* Силуэт гор Кыргызстана у нижней кромки футера */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 text-[#310711]"
+      >
+        <MountainRange className="h-20" snow={false} />
+      </div>
 
-      <div className="relative flex flex-col gap-5 px-5 pt-7 pb-8">
+      <div className="relative z-10 flex flex-col gap-5 px-5 pt-7 pb-10">
         <div className="flex items-start gap-3">
           <span
             aria-hidden

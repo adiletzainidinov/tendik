@@ -18,6 +18,7 @@ import {
 } from "@/data/islam-foundations-program";
 import { ProgramLessonAccordion } from "@/components/programma/program-lesson-accordion";
 import { ProgramRegistrationCta } from "@/components/programma/program-registration-cta";
+import { ShyrdakCorner } from "@/components/decor/shyrdak-corner";
 
 export function ProgramContent() {
   const { courseSchedule } = siteConfig;
@@ -169,15 +170,19 @@ export function ProgramContent() {
               id={mod.id}
               className="scroll-mt-16"
             >
-              <div className="decor-hero relative flex items-center gap-2.5 overflow-hidden rounded-2xl px-4 py-3.5 text-white shadow-[var(--shadow-soft)]">
+              <div className="surface-hero texture-felt relative flex items-center gap-3 overflow-hidden rounded-2xl px-4 py-3.5 text-white shadow-[var(--shadow-soft)]">
                 <div
                   aria-hidden
-                  className="pattern-ethnic-dark pointer-events-none absolute inset-0 opacity-35"
+                  className="pattern-ethnic-dark pointer-events-none absolute inset-0 z-0 opacity-30"
                 />
-                <span className="relative inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-accent/50 bg-white/[0.08] text-[13px] font-bold text-[#f2cf6f]">
+                <ShyrdakCorner
+                  corner="tr"
+                  className="pointer-events-none absolute right-2 top-2 z-0 h-8 w-8 text-accent/45"
+                />
+                <span className="relative z-10 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-accent/60 bg-white/[0.08] text-[14px] font-bold text-[#f2cf6f]">
                   {mod.romanNumber}
                 </span>
-                <div className="relative flex flex-col leading-tight">
+                <div className="relative z-10 flex flex-col leading-tight">
                   <span className="text-[14.5px] font-semibold text-white">
                     {mod.title}
                   </span>
@@ -209,8 +214,12 @@ export function ProgramContent() {
         />
         <div className="mt-3 flex flex-col gap-2">
           {AGE_ADAPTATIONS.map((age) => (
-            <Card key={age.id} tone="soft" className="!p-3.5">
-              <span className="text-[14px] font-semibold text-primary-dark">
+            <Card key={age.id} tone="felt" className="!p-3.5">
+              <span className="inline-flex items-center gap-2 text-[14px] font-semibold text-primary-dark">
+                <span
+                  aria-hidden
+                  className="h-4 w-[3px] rounded-full bg-accent"
+                />
                 {age.ageRange}
               </span>
               {age.note && (

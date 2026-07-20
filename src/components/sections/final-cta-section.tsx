@@ -6,26 +6,33 @@ import { siteConfig } from "@/config/site-config";
 import { useRegistrationStore } from "@/store/registration-store";
 import { TundukMark } from "@/components/decor/tunduk-mark";
 import { OrnamentRow } from "@/components/decor/kyrgyz-ornament";
+import { MountainRange } from "@/components/decor/mountain-range";
 
 export function FinalCtaSection() {
   const open = useRegistrationStore((s) => s.open);
 
   return (
     <section aria-labelledby="final-cta-title" className="px-5 pt-10" id="cta">
-      <div className="decor-deep frame-gold relative overflow-hidden rounded-3xl p-6 text-white shadow-[var(--shadow-elevated)]">
+      <div className="surface-deep texture-felt frame-gold relative overflow-hidden rounded-3xl p-6 pb-10 text-white shadow-[var(--shadow-elevated)]">
         <div
           aria-hidden
-          className="pattern-ethnic-dark pointer-events-none absolute inset-0 opacity-45"
+          className="pattern-ethnic-dark pointer-events-none absolute inset-0 z-0 opacity-45"
         />
         <div
           aria-hidden
           className="pointer-events-none absolute -right-14 -bottom-16 h-56 w-56 rounded-full bg-accent/15 blur-2xl"
         />
-        <div aria-hidden className="absolute inset-x-0 top-0 text-accent/60">
+        <div aria-hidden className="absolute inset-x-0 top-0 z-0 text-accent/60">
           <OrnamentRow patternId="cta-ornament" className="h-2" />
         </div>
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-0 text-[#360813]"
+        >
+          <MountainRange className="h-16" />
+        </div>
 
-        <div className="relative flex flex-col gap-3">
+        <div className="relative z-10 flex flex-col gap-3">
           <span
             aria-hidden
             className="inline-flex h-12 w-12 items-center justify-center rounded-2xl border border-accent/40 bg-white/[0.07] text-accent"

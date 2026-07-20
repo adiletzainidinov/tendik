@@ -48,8 +48,12 @@ export function ParentsSection() {
         ))}
       </ul>
 
-      <div className="mt-5 rounded-2xl border border-primary/25 bg-primary-soft/60 p-5 shadow-[var(--shadow-soft)]">
-        <p className="text-[16px] font-semibold text-primary-dark">
+      <div className="surface-felt texture-felt relative overflow-hidden mt-5 rounded-2xl border border-accent/30 p-5 shadow-[var(--shadow-soft)]">
+        <span
+          aria-hidden
+          className="edge-gold-top pointer-events-none absolute inset-x-0 top-0 h-px"
+        />
+        <p className="relative text-[16px] font-semibold text-primary-dark">
           Суроолоруңуз барбы?
         </p>
         <p className="mt-1 text-[13.5px] leading-relaxed text-primary-dark/85">

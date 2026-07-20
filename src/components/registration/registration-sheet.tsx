@@ -102,9 +102,12 @@ export function RegistrationSheet() {
           aria-hidden
           className="mx-auto mt-2 h-1 w-10 shrink-0 rounded-full bg-border"
         />
-        <div className="flex items-start justify-between gap-3 border-b border-border/70 bg-background px-5 pt-2 pb-3">
+        <div className="surface-felt flex items-start justify-between gap-3 border-b border-accent/20 px-5 pt-2 pb-3">
           <div className="flex flex-col">
-            <span className="text-[12px] font-medium tracking-wide text-primary uppercase">
+            <span className="inline-flex items-center gap-1.5 text-[12px] font-medium tracking-wide text-primary uppercase">
+              <svg aria-hidden viewBox="0 0 8 8" className="h-2 w-2 text-accent">
+                <path d="M4 0l4 4-4 4-4-4z" fill="currentColor" />
+              </svg>
               Каттоо
             </span>
             <h2

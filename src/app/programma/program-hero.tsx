@@ -7,6 +7,7 @@ import { siteConfig } from "@/config/site-config";
 import { useRegistrationStore } from "@/store/registration-store";
 import { TundukMark } from "@/components/decor/tunduk-mark";
 import { OrnamentRow } from "@/components/decor/kyrgyz-ornament";
+import { MountainRange } from "@/components/decor/mountain-range";
 
 export function ProgramHero() {
   const open = useRegistrationStore((s) => s.open);
@@ -20,17 +21,30 @@ export function ProgramHero() {
 
   return (
     <section id="top" aria-labelledby="program-hero-title">
-      <div className="decor-hero relative overflow-hidden px-5 pt-4 pb-7 text-white">
+      <div className="surface-hero texture-felt relative overflow-hidden px-5 pt-4 pb-10 text-white">
         <div
           aria-hidden
-          className="pattern-ethnic-dark pointer-events-none absolute inset-0 opacity-40"
+          className="pattern-kerege pointer-events-none absolute inset-0 z-0 opacity-[0.08]"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-16 -top-10 h-44 w-44 rounded-full bg-[#ffdd00]/10 blur-3xl"
+          className="pattern-ethnic-dark pointer-events-none absolute inset-0 z-0 opacity-30"
         />
+        {/* Большой түндүк — «путь знаний» из центра в 8 направлений */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-10 -top-8 z-0 text-accent opacity-20"
+        >
+          <TundukMark className="h-44 w-44" strokeWidth={1.4} />
+        </div>
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-0 text-[#450a1b]"
+        >
+          <MountainRange className="h-14" />
+        </div>
 
-        <div className="relative">
+        <div className="relative z-10">
           <div aria-hidden className="-mx-5 mb-3 text-accent/70">
             <OrnamentRow patternId="program-hero-ornament" className="h-2.5" />
           </div>
