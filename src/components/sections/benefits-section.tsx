@@ -3,6 +3,8 @@ import { ArrowRight } from "lucide-react";
 import { BENEFITS } from "@/data/course-data";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { EthnicDivider } from "@/components/decor/ethnic-divider";
+import { EthnicTexture } from "@/components/decor/ethnic-texture";
+import { ShyrdakCorner } from "@/components/decor/shyrdak-corner";
 import { OrnamentRow } from "@/components/decor/kyrgyz-ornament";
 
 const EXPECTED_OUTCOMES = [
@@ -25,41 +27,59 @@ export function BenefitsSection() {
         description="Бала Куран окууну гана эмес, даарат, намаз, дуба жана мусулмандык адепти күнүмдүк жашоосунда колдонууга акырындык менен үйрөнөт."
       />
 
-      {/* Две главные карточки — крупный акцент */}
+      {/* Две главные ценности — крупные войлочные панели */}
       <div className="mt-5 flex flex-col gap-3">
-        {featured.map(({ id, title, description, icon: Icon }) => (
+        {featured.map(({ id, title, description, icon: Icon }, i) => (
           <div
             key={id}
-            className="group relative overflow-hidden rounded-2xl border border-accent/30 bg-surface p-5 shadow-[var(--shadow-soft)] transition-shadow duration-200 hover:shadow-[var(--shadow-elevated)]"
+            className="surface-felt texture-felt group relative overflow-hidden rounded-2xl border border-accent/30 p-5 shadow-[var(--shadow-soft)] transition-shadow duration-200 hover:shadow-[var(--shadow-elevated)]"
           >
-            <div
+            <span
               aria-hidden
-              className="pattern-ethnic-light pointer-events-none absolute inset-0 opacity-60"
+              className="edge-gold-top pointer-events-none absolute inset-x-0 top-0 h-px"
             />
-            <div className="relative flex flex-col gap-2.5">
-              <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-white shadow-[var(--shadow-soft)]">
-                <Icon aria-hidden className="h-6 w-6" strokeWidth={1.7} />
-              </span>
-              <p className="text-[16px] font-semibold leading-snug text-text">
-                {title}
-              </p>
-              {description && (
-                <p className="text-[13.5px] leading-relaxed text-muted">
-                  {description}
+            <ShyrdakCorner
+              corner="tr"
+              className="pointer-events-none absolute right-2.5 top-2.5 h-9 w-9 text-primary/25"
+            />
+            <div className="relative flex gap-4">
+              <div className="flex flex-col items-center gap-2">
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-primary text-accent shadow-[var(--shadow-soft)]">
+                  <Icon aria-hidden className="h-6 w-6" strokeWidth={1.7} />
+                </span>
+                <span
+                  aria-hidden
+                  className="font-mono text-[13px] font-bold text-accent"
+                >
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+              </div>
+              <div className="flex flex-1 flex-col gap-1.5 pt-1">
+                <p className="text-[16px] font-semibold leading-snug text-text">
+                  {title}
                 </p>
-              )}
+                {description && (
+                  <p className="text-[13.5px] leading-relaxed text-muted">
+                    {description}
+                  </p>
+                )}
+              </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Остальные — компактная сетка */}
+      {/* Остальные ценности — компактная сетка с золотыми маркерами */}
       <div className="mt-3 grid grid-cols-2 gap-2.5">
         {rest.map(({ id, title, description, icon: Icon }) => (
           <div
             key={id}
-            className="flex flex-col gap-2 rounded-2xl border border-border bg-surface p-3.5 shadow-[var(--shadow-soft)] transition-shadow duration-200 hover:shadow-[var(--shadow-elevated)]"
+            className="relative flex flex-col gap-2 rounded-2xl border border-border bg-surface p-3.5 shadow-[var(--shadow-soft)] transition-shadow duration-200 hover:shadow-[var(--shadow-elevated)]"
           >
+            <span
+              aria-hidden
+              className="absolute left-0 top-4 h-6 w-[3px] rounded-r-full bg-accent/60"
+            />
             <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-primary-soft text-primary">
               <Icon aria-hidden className="h-4.5 w-4.5" strokeWidth={1.8} />
             </span>
@@ -75,18 +95,15 @@ export function BenefitsSection() {
         ))}
       </div>
 
-      <EthnicDivider className="mt-7" />
+      <EthnicDivider variant="medallion" className="mt-7" />
 
-      {/* Ожидаемые результаты — премиальный блок */}
-      <div className="decor-deep relative mt-5 overflow-hidden rounded-3xl p-5 text-white shadow-[var(--shadow-elevated)]">
-        <div
-          aria-hidden
-          className="pattern-ethnic-dark pointer-events-none absolute inset-0 opacity-40"
-        />
-        <div aria-hidden className="absolute inset-x-0 top-0 text-accent/60">
+      {/* Ожидаемые результаты — премиальный тёмный блок */}
+      <div className="surface-deep texture-felt relative mt-5 overflow-hidden rounded-3xl p-5 text-white shadow-[var(--shadow-elevated)]">
+        <EthnicTexture variant="ornament-dark" opacityClassName="opacity-40" />
+        <div aria-hidden className="absolute inset-x-0 top-0 z-0 text-accent/60">
           <OrnamentRow patternId="outcomes-ornament" className="h-2" />
         </div>
-        <div className="relative">
+        <div className="relative z-10">
           <span className="text-[11.5px] font-medium tracking-[0.08em] text-[#f2cf6f] uppercase">
             80 сабактан кийин
           </span>

@@ -11,14 +11,14 @@ export function EnrollmentProgressSection() {
 
   return (
     <section aria-labelledby="enrollment-title" className="px-5 pt-6">
-      <Card className="relative overflow-hidden">
+      <Card tone="felt" ethnic className="relative">
         <div
           aria-hidden
-          className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary-soft"
+          className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-accent/15 blur-2xl"
         />
         <div className="relative">
           <div className="flex items-center gap-2">
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-primary-soft text-primary-dark">
+            <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-accent">
               <Users aria-hidden className="h-5 w-5" />
             </span>
             <div className="flex flex-col leading-tight">

@@ -10,6 +10,7 @@ import { QUICK_CONTACT_URL } from "@/lib/whatsapp";
 import { useRegistrationStore } from "@/store/registration-store";
 import { TundukMark } from "@/components/decor/tunduk-mark";
 import { NationalMotifChip } from "@/components/decor/national-motif";
+import { MountainRange } from "@/components/decor/mountain-range";
 
 type NavLink = {
   label: string;
@@ -162,12 +163,18 @@ export function NavigationDrawer({
           )}
         >
           {/* Верхний национальный блок */}
-          <div className="decor-hero relative overflow-hidden px-5 pt-4 pb-4 text-white">
+          <div className="surface-hero texture-felt relative overflow-hidden px-5 pt-4 pb-8 text-white">
             <div
               aria-hidden
-              className="pattern-ethnic-dark pointer-events-none absolute inset-0 opacity-50"
+              className="pattern-ethnic-dark pointer-events-none absolute inset-0 z-0 opacity-50"
             />
-            <div className="relative flex items-start justify-between gap-3">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-x-0 bottom-0 z-0 text-[#450a1b]"
+            >
+              <MountainRange className="h-12" snow={false} />
+            </div>
+            <div className="relative z-10 flex items-start justify-between gap-3">
               <div className="flex items-center gap-2.5">
                 <span
                   aria-hidden

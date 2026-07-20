@@ -1,7 +1,7 @@
 import { ExternalLink, MapPin, Navigation } from "lucide-react";
 import { siteConfig } from "@/config/site-config";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { AlaTooSilhouette } from "@/components/decor/ala-too-silhouette";
+import { MountainRange } from "@/components/decor/mountain-range";
 
 export function LocationSection() {
   const { mosqueName, addressShort, address, mapUrl } = siteConfig.location;
@@ -19,17 +19,18 @@ export function LocationSection() {
       />
 
       <div className="mt-5 overflow-hidden rounded-3xl border border-border bg-surface shadow-[var(--shadow-soft)]">
-        {/* Атмосферная шапка карточки с горами Ала-Тоо */}
-        <div className="decor-hero relative flex h-[104px] items-end overflow-hidden">
+        {/* Атмосферная шапка: декоративный образ гор Кыргызстана (не фото
+            конкретного адреса — само место открывается по ссылке 2GIS). */}
+        <div className="surface-hero texture-felt relative flex h-[112px] items-end overflow-hidden">
           <div
             aria-hidden
             className="pointer-events-none absolute -top-8 right-6 h-24 w-24 rounded-full bg-[#ffdd00]/15 blur-2xl"
           />
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-x-0 bottom-0 text-[#43091a]"
+            className="pointer-events-none absolute inset-x-0 bottom-0 z-0 text-[#450a1b]"
           >
-            <AlaTooSilhouette className="h-14 w-full" />
+            <MountainRange className="h-16" />
           </div>
           <span
             aria-hidden

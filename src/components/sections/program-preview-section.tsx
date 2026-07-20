@@ -10,6 +10,8 @@ import {
 import { SectionHeading } from "@/components/ui/section-heading";
 import { siteConfig } from "@/config/site-config";
 import { PROGRAM_MODULES } from "@/data/islam-foundations-program";
+import { TundukMark } from "@/components/decor/tunduk-mark";
+import { ShyrdakCorner } from "@/components/decor/shyrdak-corner";
 
 export function ProgramPreviewSection() {
   const months = siteConfig.pricing.programDurationMonths;
@@ -28,15 +30,25 @@ export function ProgramPreviewSection() {
         description="Окуучулар Муаллим Сани, дубалар, даарат, намаз, ыйман, сира жана мусулмандык адеп-ахлак боюнча этап-этабы менен билим алышат."
       />
 
-      {/* Главный показатель программы */}
-      <div className="relative mt-5 overflow-hidden rounded-3xl border border-accent/30 bg-surface p-5 shadow-[var(--shadow-soft)]">
-        <div
+      {/* Главный показатель программы — войлочная поверхность */}
+      <div className="surface-felt texture-felt relative mt-5 overflow-hidden rounded-3xl border border-accent/30 p-5 shadow-[var(--shadow-soft)]">
+        <span
           aria-hidden
-          className="pattern-ethnic-light pointer-events-none absolute inset-0 opacity-50"
+          className="edge-gold-top pointer-events-none absolute inset-x-0 top-0 h-px"
+        />
+        <ShyrdakCorner
+          corner="tr"
+          className="pointer-events-none absolute right-2.5 top-2.5 h-9 w-9 text-primary/25"
         />
         <div className="relative flex items-center gap-4">
-          <span className="text-[52px] leading-none font-bold tracking-[-0.03em] text-primary">
-            80
+          <span
+            aria-hidden
+            className="relative inline-flex h-16 w-16 shrink-0 items-center justify-center text-accent"
+          >
+            <TundukMark className="absolute inset-0 h-16 w-16 opacity-30" strokeWidth={1.6} />
+            <span className="text-[30px] leading-none font-bold tracking-[-0.03em] text-primary">
+              80
+            </span>
           </span>
           <div className="flex flex-col gap-0.5">
             <span className="text-[16px] font-semibold leading-tight text-text">
@@ -48,17 +60,17 @@ export function ProgramPreviewSection() {
           </div>
         </div>
 
-        {/* Вертикальная дорожка из 8 модулей */}
+        {/* Путь знаний: вертикальная дорожка из 8 модулей-медальонов */}
         <ol className="relative mt-5 flex flex-col gap-0">
           {PROGRAM_MODULES.map((mod, i) => (
             <li key={mod.id} className="relative flex gap-3 pb-3 last:pb-0">
               {i < PROGRAM_MODULES.length - 1 && (
                 <span
                   aria-hidden
-                  className="absolute left-[13px] top-7 bottom-0 w-px bg-gradient-to-b from-accent/60 to-accent/20"
+                  className="absolute left-[13px] top-7 bottom-0 w-px bg-gradient-to-b from-accent/70 to-accent/20"
                 />
               )}
-              <span className="z-10 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-accent/50 bg-accent-soft text-[10.5px] font-bold text-primary-dark">
+              <span className="z-10 inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-accent/60 bg-surface text-[10.5px] font-bold text-primary-dark shadow-[0_1px_3px_rgba(111,18,35,0.12)]">
                 {mod.romanNumber}
               </span>
               <div className="flex min-w-0 flex-1 items-baseline justify-between gap-2 pt-1">
