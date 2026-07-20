@@ -215,6 +215,20 @@
 - Risk: нулевой.
 - Verification: `grep "Муаллим Саани" src` = 0.
 
+### AUDIT-016: Закоммиченные артефакты `.screenshots/` (gitignored, но tracked)
+- Severity: P2 · Category: dead artifacts/repo hygiene · Status: fixed
+- Evidence: `git ls-files .screenshots/` → 7 PNG (716K), добавлены в первом
+  коммите `67140f2`. Каталог **есть** в `.gitignore` (строка 30), но
+  `.gitignore` не распространяется на уже отслеживаемые файлы. В `src/`/`public/`
+  ссылок нет.
+- Root cause: артефакты закоммичены до появления правила в `.gitignore`.
+- Impact: 716K мусора в истории/клонах, вводит в заблуждение.
+- Best solution: `git rm -r .screenshots` (правило `.gitignore` уже на месте,
+  повторно не добавляется).
+- Files: удалены 7 файлов в `.screenshots/`.
+- Risk: нулевой — не используются в рантайме.
+- Verification: `git ls-files .screenshots` пусто; build зелёный.
+
 ---
 
 ## Deferred (follow-up, не в этом PR)
