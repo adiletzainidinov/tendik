@@ -35,6 +35,7 @@ export default function MaalymatPage() {
       </div>
       <div className="px-5 pt-4">
         <SectionHeading
+          as="h1"
           eyebrow="Курс жөнүндө"
           title="Толук маалымат"
           description="Баалар, окуу багыттары, балдарды мотивациялоо, төлөм тартиби жана ата-энелер үчүн керектүү маалымат."
