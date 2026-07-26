@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { MobileShell } from "@/components/layout/mobile-shell";
-import { TundukMark } from "@/components/decor/tunduk-mark";
+import { BrandMark } from "@/components/decor/brand-mark";
 import { OrnamentRow } from "@/components/decor/kyrgyz-ornament";
 
 export default function NotFound() {
@@ -15,7 +15,7 @@ export default function NotFound() {
           aria-hidden
           className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary text-accent shadow-[var(--shadow-soft)]"
         >
-          <TundukMark className="h-9 w-9" strokeWidth={2.4} />
+          <BrandMark className="h-10 w-10" />
         </span>
         <p className="mt-6 text-[44px] leading-none font-bold text-primary">
           404

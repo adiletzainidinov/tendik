@@ -8,7 +8,7 @@ import { cn } from "@/lib/cn";
 import { siteConfig } from "@/config/site-config";
 import { QUICK_CONTACT_URL } from "@/lib/whatsapp";
 import { useRegistrationStore } from "@/store/registration-store";
-import { TundukMark } from "@/components/decor/tunduk-mark";
+import { BrandMark } from "@/components/decor/brand-mark";
 import { NationalMotifChip } from "@/components/decor/national-motif";
 import { MountainRange } from "@/components/decor/mountain-range";
 
@@ -180,7 +180,7 @@ export function NavigationDrawer({
                   aria-hidden
                   className="flex h-10 w-10 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-accent"
                 >
-                  <TundukMark className="h-6 w-6" strokeWidth={3} />
+                  <BrandMark className="h-6.5 w-6.5" />
                 </span>
                 <div className="flex flex-col leading-tight">
                   <h2
