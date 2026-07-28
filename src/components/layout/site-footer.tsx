@@ -8,7 +8,7 @@ import {
 import { InstagramIcon } from "@/components/ui/instagram-icon";
 import { siteConfig } from "@/config/site-config";
 import { QUICK_CONTACT_URL } from "@/lib/whatsapp";
-import { TundukMark } from "@/components/decor/tunduk-mark";
+import { BrandMark } from "@/components/decor/brand-mark";
 import { NationalMotifChip } from "@/components/decor/national-motif";
 import { OrnamentRow } from "@/components/decor/kyrgyz-ornament";
 import { MountainRange } from "@/components/decor/mountain-range";
@@ -48,7 +48,7 @@ export function SiteFooter() {
             aria-hidden
             className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-accent/40 bg-white/[0.07] text-accent"
           >
-            <TundukMark className="h-6.5 w-6.5" strokeWidth={2.8} />
+            <BrandMark className="h-7 w-7" />
           </span>
           <div className="flex flex-col">
             <span className="text-[17px] font-semibold text-white">

@@ -1,5 +1,53 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#0f5132"/>
-  <path d="M32 12c8 4.4 13 12.6 13 21.6 0 10.8-8.2 20-19.2 22C36.5 55.4 45 47.4 47.5 37 50.4 25 42.2 13 32 12z" fill="#c89b3c"/>
-  <path d="M26 22c-2.6 2-4.4 5.2-4.4 8.8 0 6.2 5.2 11.2 11.4 11.2 1.9 0 3.6-.4 5-1.2-2.4 4.4-7.2 7.4-12.6 7.4-8 0-14.4-6.4-14.4-14.4 0-7.2 5.4-13.2 12.4-14.2-.6.8-1.2 1.6-1.4 2.4z" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <rect width="100" height="100" rx="22" fill="#9e1b32"/>
+  <g transform="translate(50 50) scale(0.88) translate(-50 -50)" fill="none">
+    <g fill="#c6952f">
+      <path d="M50 5 52.4 22 47.6 22Z"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(9 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(18 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(27 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(36 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(45 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(54 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(63 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(72 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(81 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(90 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(99 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(108 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(117 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(126 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(135 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(144 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(153 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(162 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(171 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(180 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(189 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(198 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(207 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(216 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(225 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(234 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(243 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(252 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(261 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(270 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(279 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(288 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(297 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(306 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(315 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(324 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(333 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(342 50 50)"/>
+      <path d="M50 5 52.4 22 47.6 22Z" transform="rotate(351 50 50)"/>
+    </g>
+    <circle cx="50" cy="50" r="28.5" stroke="#c6952f" stroke-width="4.4"/>
+    <g stroke="#c6952f" stroke-width="3.2" stroke-linecap="round">
+      <g><path d="M27 55 Q50 41 73 55"/><path d="M27 46 Q50 32 73 46"/></g>
+      <g transform="rotate(60 50 50)"><path d="M27 55 Q50 41 73 55"/><path d="M27 46 Q50 32 73 46"/></g>
+      <g transform="rotate(120 50 50)"><path d="M27 55 Q50 41 73 55"/><path d="M27 46 Q50 32 73 46"/></g>
+    </g>
+  </g>
 </svg>

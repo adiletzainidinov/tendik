@@ -6,7 +6,7 @@ import { Menu } from "lucide-react";
 import { cn } from "@/lib/cn";
 import { siteConfig } from "@/config/site-config";
 import { NavigationDrawer } from "@/components/layout/navigation-drawer";
-import { TundukMark } from "@/components/decor/tunduk-mark";
+import { BrandMark } from "@/components/decor/brand-mark";
 
 export function SiteHeader() {
   const [compact, setCompact] = React.useState(false);
@@ -45,7 +45,7 @@ export function SiteHeader() {
               aria-hidden
               className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-accent shadow-[var(--shadow-soft)] transition-transform duration-200 group-hover:scale-105"
             >
-              <TundukMark className="h-5.5 w-5.5" strokeWidth={3} />
+              <BrandMark className="h-6 w-6" />
             </span>
             <span className="flex flex-col leading-tight">
               <span className="text-[15.5px] font-semibold tracking-[-0.01em] text-text">
