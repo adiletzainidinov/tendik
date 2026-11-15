@@ -86,6 +86,8 @@ export function HomeRegistrationSection() {
         </div>
       )}
 
+      <Link href="/maalymat#social-discounts" className="mt-4 block rounded-xl border border-accent/30 bg-accent-soft/60 px-4 py-3 text-[13px] leading-relaxed text-primary-dark"><strong>5 жеңилдетилген орун:</strong> муктаж үй-бүлөлөргө жана курста сабак берген устаздардын балдарына жеңилдик каралган. Шарттарын көрүү →</Link>
+
       <div className="mt-4 flex flex-col gap-2">
         <Button variant="primary" size="lg" onClick={open} fullWidth>
           Баланы каттоо
