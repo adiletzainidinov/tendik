@@ -53,7 +53,7 @@ export function HeroSection() {
 
           <p className="max-w-[420px] text-[15px] leading-relaxed text-white/85">
             Муаллим Сани, дуба, даарат, намаз, ыйман, сира жана адеп-ахлакты
-            камтыган 80 сабактык, жаш куракка ылайык окуу программасы.
+            камтыган 80 сабактык окуу долбоору. Алгачкы 6 сабак даяр, ар жумада дагы 2 сабак кошулат.
           </p>
 
           <div
@@ -68,7 +68,7 @@ export function HeroSection() {
 
           <div className="flex flex-wrap items-center gap-2">
             {[
-              "80 сабак",
+              "80 сабак планда",
               `${siteConfig.pricing.programDurationMonths} ай`,
               "Жаш куракка ылайык",
             ].map((stat) => (
