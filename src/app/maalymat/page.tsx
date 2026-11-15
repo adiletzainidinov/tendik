@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import { SitePageShell } from "@/components/layout/site-page-shell";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { EthnicDivider } from "@/components/decor/ethnic-divider";
+import { SocialDiscountSection } from "@/components/sections/social-discount-section";
 import { PricingSection } from "@/components/sections/pricing-section";
 import { CurriculumSection } from "@/components/sections/curriculum-section";
 import { LearningPathSection } from "@/components/sections/learning-path-section";
@@ -43,6 +44,7 @@ export default function MaalymatPage() {
         <EthnicDivider className="mt-5" />
       </div>
       <PricingSection />
+      <SocialDiscountSection />
       <CurriculumSection />
       <LearningPathSection />
       <MotivationSection />
