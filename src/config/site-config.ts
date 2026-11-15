@@ -17,33 +17,10 @@ export type SeatPrice = {
 // Exact per-seat prices for the 25-seat main group. The step between seats
 // is not uniform, so the values are listed explicitly — do not derive them
 // from a formula.
-const MAIN_GROUP_SEAT_PRICES: readonly SeatPrice[] = [
-  { seat: 1, priceSom: 5000 },
-  { seat: 2, priceSom: 5400 },
-  { seat: 3, priceSom: 5800 },
-  { seat: 4, priceSom: 6200 },
-  { seat: 5, priceSom: 6700 },
-  { seat: 6, priceSom: 7100 },
-  { seat: 7, priceSom: 7500 },
-  { seat: 8, priceSom: 7900 },
-  { seat: 9, priceSom: 8300 },
-  { seat: 10, priceSom: 8800 },
-  { seat: 11, priceSom: 9200 },
-  { seat: 12, priceSom: 9600 },
-  { seat: 13, priceSom: 10000 },
-  { seat: 14, priceSom: 10400 },
-  { seat: 15, priceSom: 10800 },
-  { seat: 16, priceSom: 11200 },
-  { seat: 17, priceSom: 11700 },
-  { seat: 18, priceSom: 12100 },
-  { seat: 19, priceSom: 12500 },
-  { seat: 20, priceSom: 12900 },
-  { seat: 21, priceSom: 13300 },
-  { seat: 22, priceSom: 13800 },
-  { seat: 23, priceSom: 14200 },
-  { seat: 24, priceSom: 14600 },
-  { seat: 25, priceSom: 15000 },
-];
+const MAIN_GROUP_SEAT_PRICES: readonly SeatPrice[] = Array.from({ length: 25 }, (_, i) => ({
+  seat: i + 1,
+  priceSom: Math.round((13000 + (4000 * i) / 24) / 100) * 100,
+}));
 
 export const siteConfig = {
   name: "Теңдик",
