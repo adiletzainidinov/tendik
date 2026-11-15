@@ -14,7 +14,7 @@ export default function ProgrammaPage() {
       <main className="px-5 py-8">
         <Link href="/" className="text-[13px] font-medium text-primary">← Башкы бетке кайтуу</Link>
         <h1 className="mt-5 text-[27px] font-bold text-text">Даяр сабактар</h1>
-        <p className="mt-2 text-[14px] leading-relaxed text-muted">Жалпы 80 сабак пландалган. Алгачкы 6 сабактын материалдары 3 видеодо жарыяланды. Жакында өз-өзүнчө бөлүнөт. Ар жума сайын дагы 2 жаңы сабак даярдайбыз.</p>
+        <p className="mt-2 text-[14px] leading-relaxed text-muted">Бул видеолор устаздар үчүн даярдалган. Устаз ар бир сабактын алдында тиешелүү видеону көрүп, негизги ойлорун эстеп алат. Андан кийин балдарга видеону жөн эле көрсөтпөстөн, мазмунун өз сөзү менен жашына ылайык түшүндүрүп берет. Азыр 3 видео бар, алар кийин 6 өзүнчө сабакка бөлүнөт. Ар жума сайын дагы 2 сабак даярдалат.</p>
         <div className="mt-6 flex flex-col gap-4">
           {PUBLISHED_LESSON_GROUPS.map((lesson) => (
             <article key={lesson.id} className="rounded-2xl border border-border bg-surface p-4 shadow-[var(--shadow-soft)]">
