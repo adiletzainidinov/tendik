@@ -30,7 +30,7 @@ export const siteConfig = {
     "Мечитте ишемби жана жекшемби күндөрү өтүүчү балдар үчүн Куран, тажвид, дуа, даарат жана намаз үйрөтүү курсу.",
 
   minimumStudents: MAIN_GROUP_SEAT_PRICES.length,
-  registeredStudents: 0,
+  registeredStudents: 1,
 
   pricing: {
     programDurationMonths: 9,
